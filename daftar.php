@@ -1,26 +1,27 @@
 <?php
 	session_start();
- 
 	if (isset($_SESSION['login'])) {
 	    header("Location: beranda.php");
 	}
-  include "db/koneksi.php";
-  if (isset($_POST["daftar"])) {
-    $username = $_POST['username'];
-    $email    = $_POST['email'];
-    $password = $_POST['password'];
 
-    $daftar   = mysqli_query($koneksi, "INSERT INTO tb_user VALUES ('', '', '$username', '$email', '$password', '')");
-    if ($daftar) {
-      echo ("<SCRIPT LANGUAGE='JavaScript'>
-          window.alert('Pendaftaran Berhasil, Klik OK untuk Login')
-      window.location.href='login.php';
-    </SCRIPT>");
-    }else{
-      echo "gagal";
-    }
-  }
+  	include "db/koneksi.php";
+  	if (isset($_POST["daftar"])) {
+    	$username = $_POST['username'];
+    	$email    = $_POST['email'];
+    	$password = $_POST['password'];
 
+    	$daftar   = $koneksi->query("INSERT INTO tb_user VALUES ('', '', '$username', '$email', '$password', '', 'user')");
+    	if ($daftar) {
+      		echo (
+				"<SCRIPT LANGUAGE='JavaScript'>
+				window.alert('Pendaftaran Berhasil, Klik OK untuk Login')
+				window.location.href='login.php';
+				</SCRIPT>"
+			);
+    	}else{
+      		echo "gagal";
+    	}
+  	}
 ?>
 
 <!DOCTYPE html>
