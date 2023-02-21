@@ -1,37 +1,38 @@
 <?php
-	session_start();
-	if (isset($_SESSION['login'])) {
-	    header("Location: beranda.php");
-	}
+session_start();
+if (isset($_SESSION['login'])) {
+	header("Location: beranda.php");
+}
 
-  	include "db/koneksi.php";
-  	if (isset($_POST["daftar"])) {
-    	$username = $_POST['username'];
-    	$email    = $_POST['email'];
-    	$password = $_POST['password'];
+include "db/koneksi.php";
+if (isset($_POST["daftar"])) {
+	$username = $_POST['username'];
+	$email    = $_POST['email'];
+	$password = $_POST['password'];
 
-    	$daftar   = $koneksi->query("INSERT INTO tb_user VALUES ('', '', '$username', '$email', '$password', '', 'user')");
-    	if ($daftar) {
-      		echo (
-				"<SCRIPT LANGUAGE='JavaScript'>
+	$daftar   = $koneksi->query("INSERT INTO tb_user VALUES ('', '', '$username', '$email', '$password', '', 'user')");
+	if ($daftar) {
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
 				window.alert('Pendaftaran Berhasil, Klik OK untuk Login')
 				window.location.href='login.php';
 				</SCRIPT>"
-			);
-    	}else{
-      		echo "gagal";
-    	}
-  	}
+		);
+	} else {
+		echo "gagal";
+	}
+}
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Daftar</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-	<section>	
+	<section>
 		<div class="img-box">
 			<img src="images/read-ebook.jpg">
 		</div>
@@ -71,8 +72,9 @@
 					</div>
 
 				</form>
-			</div>	
+			</div>
 		</div>
 	</section>
 </body>
+
 </html>
