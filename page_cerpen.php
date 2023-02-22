@@ -4,7 +4,7 @@
     </div>
     <div class="content row ">
         <?php
-        $data = mysqli_query($koneksi, "SELECT * FROM tb_post WHERE kategori='Cerpen' AND status='publis'");
+        $data = mysqli_query("SELECT * FROM tb_post WHERE kategori='Cerpen' AND status='publis'");
         while ($d = mysqli_fetch_array($data)) {
         ?>
             <div class="col-md-2 mx-md-3 datatab">
