@@ -48,7 +48,7 @@
                             include "report.php";
                             break;
                          case 'kategori':
-                            include "add_kategori.php";
+                            include "kategori.php";
                             break;
                         
                     }

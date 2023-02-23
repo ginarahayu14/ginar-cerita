@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "ineffable");
+$koneksi = mysqli_connect("localhost", "root", "", "ineffable3");
 
 // Check connection
 if (mysqli_connect_errno()) {
