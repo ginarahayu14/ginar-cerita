@@ -3,20 +3,20 @@
 
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="1500">
+      <div class="carousel-item active" data-bs-interval="3000">
         <h2>Semua misteri terungkap!</h2>
-        <p>Nonton semua episode-nya sekarang!</p>
-        <img src="images/my-silly-wife_hfc_desktop.jpg" class="d-block w-100" alt="..." style="border-radius: 16px; ">
+        <p>Baca semua episode-nya sekarang!</p>
+        <img src="images/green.png" class="d-block w-100" alt="..." style="border-radius: 16px; ">
       </div>
-      <div class="carousel-item" data-bs-interval="1500">
+      <div class="carousel-item" data-bs-interval="3000">
         <h2>Semua misteri terungkap!</h2>
-        <p>Nonton semua episode-nya sekarang!</p>
+        <p>Baca semua episode-nya sekarang!</p>
         <img src="images/denial_hfc_desktop.jpg" class="d-block w-100" alt="..." style="border-radius: 16px;">
       </div>
-      <div class="carousel-item" data-bs-interval="1500">
+      <div class="carousel-item" data-bs-interval="3000">
         <h2>Semua misteri terungkap!</h2>
-        <p>Nonton semua episode-nya sekarang!</p>
-        <img src="images/lwmk_hfc_desktop.png" class="d-block w-100" alt="..." style="border-radius: 16px;">
+        <p>Baca semua episode-nya sekarang!</p>
+        <img src="images/montain.png" class="d-block w-100" alt="..." style="border-radius: 16px;">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -32,7 +32,7 @@
   <div class="greeting-and-content-settings">
     <div class="module-content">
       <?php
-      $sel = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE id='$_SESSION[id]'");
+      $sel = $conn->query("SELECT * FROM tb_user WHERE id='$_SESSION[id]'");
       while( $nam = mysqli_fetch_array($sel)){
       ?>
       <div class="greeting">
@@ -52,7 +52,7 @@
     </div>
     <div class="content row ">
       <?php
-        $data = mysqli_query($koneksi,"SELECT * FROM tb_post WHERE status='publis' limit 5");
+        $data = $conn->query("SELECT * FROM tb_post WHERE status='publis' limit 5");
         while($d = mysqli_fetch_array($data)){
       ?>
       <div class="col-md-2 mx-md-3 datatab">
@@ -73,7 +73,7 @@
 
   <div class="pilihan p-md-5">
     <?php
-      $pupular = mysqli_query($koneksi,"SELECT * FROM tb_post ORDER BY view DESC limit 1");
+      $pupular = $conn->query("SELECT * FROM tb_post ORDER BY view DESC limit 1");
         while($p = mysqli_fetch_array($pupular)){
     ?>
     <div class="content row">
@@ -99,7 +99,7 @@
   </div>
 
   
-<?php $kategori = $koneksi->query("SELECT * FROM tb_kategori"); ?>
+<?php $kategori = $conn->query("SELECT * FROM tb_kategori"); ?>
 <?php while($kate = $kategori->fetch_assoc()) : ?>
     <div class="post-popular ">
         <div class="heading">

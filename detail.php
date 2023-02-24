@@ -22,7 +22,7 @@
                 <h4>Postingan Terbaru</h4>
                 <hr width="60%">
             </div>
-            <?php $query = $koneksi->query("SELECT * FROM tb_post ORDER BY id DESC LIMIT 3"); ?>
+            <?php $query = $conn->query("SELECT * FROM tb_post ORDER BY id DESC LIMIT 3"); ?>
             <?php while ($a = $query->fetch_array()) : ?>
             <div class="right-content">
                 <div class="row mb-md-2">
@@ -43,8 +43,8 @@
         <div class="col-md-6 paragraf">
         <?php
         $id = $_GET['id'];
-        $view = $koneksi->query("UPDATE tb_post SET view= view+1 WHERE id='$id'");
-        $data = $koneksi->query("SELECT * FROM tb_post where id='$id'");
+        $view = $conn->query("UPDATE tb_post SET view= view+1 WHERE id='$id'");
+        $data = $conn->query("SELECT * FROM tb_post where id='$id'");
         ?>
         <?php while($detail = $data->fetch_array()) : ?>
             <h2><?php echo $detail['judul'] ?></h2>
@@ -77,7 +77,7 @@
             <!-- FORM KOMENTAR -->
             <!-- MENAMPILKAN KOMENTAR -->
             <?php
-            $komen =  $koneksi->query( "SELECT tb_comment.id, tb_comment.user_id, tb_comment.comment, tb_user.username FROM tb_comment INNER JOIN tb_user ON tb_comment.user_id=tb_user.id WHERE tb_comment.post_id=".$detail['id']);
+            $komen =  $conn->query( "SELECT tb_comment.id, tb_comment.user_id, tb_comment.comment, tb_user.username FROM tb_comment INNER JOIN tb_user ON tb_comment.user_id=tb_user.id WHERE tb_comment.post_id=".$detail['id']);
             ?>
             <?php while($showcomment =  $komen->fetch_array()){
                 echo $showcomment['username']."<br>";

@@ -152,12 +152,12 @@
 
           <li class="nav-item dropdown">
               <?php
-                $select_user = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE id = '$_SESSION[id]' ");
+                $select_user = $conn->query("SELECT * FROM tb_user WHERE id = '$_SESSION[id]' ");
                 while ($u = mysqli_fetch_array($select_user)){
               ?>
               <?php if (empty($u['photo'])): ?>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="images/yamato.jpg" class="profile-image rounded-circle" style="object-fit: cover 50% 50% no-repeat; width:30px; height:30px; border: 1px solid #000; margin-left: 10px;"><span class="caret" style="margin-left: 10px;"><?php echo $u['username']; ?></span></a>
+              <img src="images/wa15.jpg" class="profile-image rounded-circle" style="object-fit: cover 50% 50% no-repeat; width:30px; height:30px; border: 1px solid #000; margin-left: 10px;"><span class="caret" style="margin-left: 10px;"><?php echo $u['username']; ?></span></a>
               <?php else: ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="images/<?php echo $u['photo']; ?>" class="profile-image rounded-circle" style="object-fit: cover 50% 50% no-repeat; width:30px; height:30px; border: 1px solid #000; margin-left: 10px;"><span class="caret" style="margin-left: 10px;"><?php echo $u['username']; ?></span></a>

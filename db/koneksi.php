@@ -1,7 +1,14 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "ineffable3");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "ineffable";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
-if (mysqli_connect_errno()) {
-    echo "Koneksi database gagal : " . mysqli_connect_error();
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
+?>

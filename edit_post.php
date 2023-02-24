@@ -75,45 +75,43 @@ include "db/koneksi.php";
 </head>
 
 <body>
-
-  
-  <?php
-    $id = $_GET['id'];
-    $query = mysqli_query($koneksi,"SELECT * FROM tb_post where id='$id'");
-    while ($a = mysqli_fetch_array($query)){
-  ?>
+<p id="demo"></p>
     <div class="container">
       <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
           <div class="col-md-8 pt-md-5">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Judul</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" name="judul" value="<?php echo $a['judul'] ?>">
-              <input type="hidden" class="form-control" id="exampleFormControlInput1" name="post_id" value="<?php echo $a['id'] ?>">
-              <input type="hidden" class="form-control" id="exampleFormControlInput1" name="view" value="<?php echo $a['view'] ?>">
-              <input type="hidden" class="form-control" id="exampleFormControlInput1" name="user_id" value="<?php echo $a['user_id'] ?>">
+              <input type="text" class="form-control" id="exampleFormControlInput1" name="judul">
+              <input type="hidden" class="form-control" id="exampleFormControlInput1" name="user_id" value="<?php echo $_SESSION['id'] ?>">
             </div>
-            <div class="user_id">
+            <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Kategori</label>
               <select class="form-control" id="exampleFormControlSelect1" name="kategori">
-                <option value="Puisi" <?php if($a['kategori']=="Puisi") echo 'selected="selected"';?>>Puisi</option>
-                <option value="Qoutes" <?php if($a['kategori']=="Qoutes") echo 'selected="selected"';?>>Qoutes</option>
-                <option value="Cerpen" <?php if($a['kategori']=="Cerpen") echo 'selected="selected"';?>>Cerpen</option>
-                <option value="Novel" <?php if($a['kategori']=="Novel") echo 'selected="selected"';?>>Novel</option>
+              <?php 
+                  $query = $conn->query("SELECT * FROM tb_kategori order by nama asc");
+                  while ($data=mysqli_fetch_array($query)) {
+                ?>
+             
+                <option value="<?php echo $data['id']?>"><?php echo $data['nama']?></option>
+                
+                <?php
+                  }
+                ?>
               </select>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Tulis Ceritamu</label>
-              <textarea class="form-control" id="" placeholder="Tulis disini..." rows="25" name="isi" value=""><?php echo $a['isi'] ?></textarea>
+              <textarea class="form-control" id="" placeholder="Tulis disini..." rows="10" name="isi"></textarea>
             </div>
           </div>
           <div class="col-md-4 d-flex  justify-content-center pt-md-5">
             <div class="card p-md-5 " style="width:225px; height: 300px;">
               <div class="input-group text-center">
                 <div class="image-upload">
-                  <img src="images/<?php echo $a['photo'] ?>" style="width:90%; opacity: 0.4;" onClick="triggerClick()" id="profileDisplay">
+                  <img src="images/add_a_photo_black_48dp.svg" style="width:90%; opacity: 0.4;" onClick="triggerClick()" id="profileDisplay">
                   <label for="file-input" style="font-size: 12px;">Silahkan pilih cover</label>
-                  <input type="file" name="sampul" onChange="displayImage(this)" id="profileImage"/>
+                  <input type="file" name="sampul" onChange="displayImage(this)" id="profileImage" style="display: none;" />
                 </div>
               </div>
             </div>
@@ -121,17 +119,14 @@ include "db/koneksi.php";
           <div class="row">
             <div class="col-md-8 pt-md-5">
               <div class="d-grid gap-5 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="submit" name="update_publis">Posting</button>
-                <button class="btn btn-primary" type="submit" name="update_arsip">Arsipkan</button>
+                <button class="btn btn-primary me-md-2" type="submit" name="add">Posting</button>
+                <button class="btn btn-primary" type="submit" name="arsip">Arsipkan</button>
               </div>
             </div>
           </div>
         </div>
       </form>
     </div>
-    <?php
-      }
-    ?>
 
   <!-- BOOSTRAP -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"

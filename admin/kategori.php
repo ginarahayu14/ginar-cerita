@@ -20,8 +20,23 @@
         color: red;
     }
 </style>
+<?php 
+if (isset($_POST['add'])){
+    $id =$_POST['id'];
+    $nama          = $_POST['nama'];
+      $add = mysqli_query($koneksi, "SELECT * FROM tb_kategori VALUES ('', '$nama')");
+     if ($add) {
+        echo (
+            "<script LANGUAGE='JavaScript'>
+            window.alert('Berhasil Di Publish');
+            window.location.href='index.php?halaman=kategori';
+            </script>"
+        );
+    }
+    }
+?>
 <div class="container">
-<a class="btn" href="add_kategori.php" role="button">Tambah Kategori</a>
+<a class="btn" href="index.php?halaman=add_kategori" role="button">Tambah Kategori</a>
 <center><table class="table table-striped">
   <thead>
     <tr>
@@ -30,7 +45,7 @@
       <th scope="col">Aksi</th>
     </tr>
   </thead>
-
+ 
 
   <!-- <tbody>
     <tr>

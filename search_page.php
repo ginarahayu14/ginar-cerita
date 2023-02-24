@@ -14,7 +14,7 @@
         </div>
       <?php
       
-        $data_cerpen = mysqli_query($koneksi,"SELECT * FROM tb_post WHERE judul LiKE '%$_GET[cari]%' AND status='publis'");
+        $data_cerpen = $conn->query("SELECT * FROM tb_post WHERE judul LiKE '%$_GET[cari]%' AND status='publis'");
         $count = mysqli_num_rows($data_cerpen);
         if ($count > 0) {
         	while($cerpen = mysqli_fetch_array($data_cerpen)){
@@ -36,32 +36,21 @@
       }else{
       ?>
     </div>
-       <div class="container pt-md-3" >
-        <h2 class="my-md-3">Kategori</h2>
-        <hr>
-        <div class="row mt-md-2">
-          <div class="col-md-6 ">
-            <a href="beranda.php?beranda=cerpen" style="color: black; text-decoration: none;">
-              <div class="shadow  p-3 pt-5 pb-5 mb-5 bg-white rounded">Cerita Pendek</div>
-            </a>
-          </div>
-          <div class="col-md-6 " >
-            <a href="beranda.php?beranda=puisi" style="color: black; text-decoration: none;">
-                <div class="shadow p-3 pt-5 pb-5 mb-5 mb-5 bg-white rounded">Puisi</div>
-            </a>
-          </div>
-          <div class="col-md-6 ">
-            <a href="beranda.php?beranda=quotes" style="color: black; text-decoration: none;">
-              <div class="shadow p-3 pt-5 pb-5 mb-5 mb-5 bg-white rounded">Quotes</div>
-            </a>
-          </div>
-          <div class="col-md-6">
-            <a href="beranda.php?beranda=novel" style="color: black; text-decoration: none;">
-              <div class="shadow p-3 pt-5 pb-5 mb-5 mb-5 bg-white rounded">Novel</div>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Kategori</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="kategori">
+              <?php 
+                  $query = $conn->query("SELECT * FROM tb_kategori order by nama_kategori asc");
+                  while ($data=mysqli_fetch_array($query)) {
+                ?>
+             
+                <option value="<?php echo $data['id']?>"><?php echo $data['nama_kategori']?></option>
+                
+                <?php
+                  }
+                ?>
+              </select>
+            </div>
       <?php
       }
       ?>

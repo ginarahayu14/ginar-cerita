@@ -1,5 +1,5 @@
 <?php 
-  $show_user = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE id='$_SESSION[id]'");
+  $show_user = $conn->query("SELECT * FROM tb_user WHERE id='$_SESSION[id]'");
   while ($show = mysqli_fetch_array($show_user)){
 ?>
 
@@ -8,7 +8,7 @@
 
           <?php if (empty($show['photo'])): ?>
           <div class=" pt-md-5 d-flex justify-content-center">
-            <img src="images/yamato.jpg" class="profile-image profile-image-content rounded-circle" >
+            <img src="images/wa15.jpg" class="profile-image profile-image-content rounded-circle" >
           </div>
           <?php else: ?>
             <div class=" pt-md-5 d-flex justify-content-center">
@@ -35,7 +35,7 @@
 
           <div class="pb-md-5 d-flex justify-content-center">
             <a href="beranda.php?beranda=edit_profile&user_id=<?php echo $_SESSION['id']?>">
-              <button type="button" class="btn btn-secondary">Edit Profile    <i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-primary">Edit Profile    <i class="fas fa-edit"></i></button>
             </a>
           </div>
          

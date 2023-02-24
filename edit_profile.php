@@ -9,7 +9,7 @@
     $photo       = $_FILES['photo']['name'];
     $namaSementara  = $_FILES['photo']['tmp_name'];
     move_uploaded_file($namaSementara, 'images/'.$photo);
-    $update_publis = mysqli_query($koneksi, "UPDATE tb_user SET  nama='$nama', username='$username', email='$email', photo='$photo' WHERE id='$id'");
+    $update_publis = $conn->query("UPDATE tb_user SET  nama='$nama', username='$username', email='$email', photo='$photo' WHERE id='$id'");
     if ($update_publis){
     	echo ("<script LANGUAGE='JavaScript'>
       window.alert('Berhasil Di Publish');

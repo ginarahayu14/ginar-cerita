@@ -1,6 +1,6 @@
 <?php
 include "db/koneksi.php";
-$data = mysqli_query($koneksi, "SELECT * FROM perpustakaan join tb_post on perpustakaan.post_id = tb_post.id WHERE perpustakaan.user_id='$_SESSION[id]'");
+$data = $conn->query("SELECT * FROM perpustakaan join tb_post on perpustakaan.post_id = tb_post.id WHERE perpustakaan.user_id='$_SESSION[id]'");
 while ($d = mysqli_fetch_array($data)) {
 ?>
 	<div class="col-md-2">
@@ -10,7 +10,7 @@ while ($d = mysqli_fetch_array($data)) {
 				<h5 class="card-title" style="font-size: 16px"><?php echo $d['judul'] ?></h5>
 				<p class="card-text"><?php echo mb_strimwidth($d['isi'], 0, 50, "..."); ?></p>
 				<div class="btn-group" role="group">
-					<button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Pilihan
 					</button>
 					<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">

@@ -8,7 +8,7 @@
 	if(isset($_POST['login'])){
 		$email = $_POST['email'];
 		$pass  = $_POST['pass'];
-		$query = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE email='$email'");
+		$query = $conn->query("SELECT * FROM tb_user WHERE email='$email'");
 		$r = mysqli_num_rows($query);
 		if ($r > 0) {
 			while($row = mysqli_fetch_array($query)){

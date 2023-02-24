@@ -18,7 +18,7 @@
         </div>
       <?php
       include "db/koneksi.php";
-      $data_cerpen = mysqli_query($koneksi,"SELECT * FROM tb_post WHERE judul LiKE '%$_GET[isi]%' AND status='publis'");
+      $data_cerpen = $conn->query("SELECT * FROM tb_post WHERE judul LiKE '%$_GET[isi]%' AND status='publis'");
         $count = mysqli_num_rows($data_cerpen);
       if ($count > 0) {
         while($cerpen = mysqli_fetch_array($data_cerpen)){
@@ -43,29 +43,48 @@
       <?php else: ?>
         <!-- CONTENT TEMGAH -->
       <div class="container pt-md-3" >
-        <h2 class="my-md-3">Kategori</h2>
+      <div class="row">
+      <div class="col">
+      <h2 class="my-md-3">Kategori</h2>
+      </div>
+      <div class="col">
+      <button style="margin-left: 63%; background-color: #85CDFD; height: 35px;" ><a href="beranda.php?beranda=add_kategori"><span class="text-white">Tambah Kategori</span></a></button>      
+    </div>
+    </div>
         <hr>
+        
         <div class="row mt-md-2">
+        <?php
+          include "db/koneksi.php";
+          $data = $conn->query("SELECT * FROM tb_kategori");
+          while($d = mysqli_fetch_array($data)){
+
+        ?>
           <div class="col-md-6 ">
-            <a href="beranda.php?beranda=cerpen" style="color: black; text-decoration: none;">
-              <div class="shadow  p-3 pt-5 pb-5 mb-5 bg-white rounded">Cerita Pendek</div>
+            <a href="beranda.php?beranda=<?php echo $d['nama_kategori']?>" style="color: black; text-decoration: none;">
+              <div class="shadow  p-3 pt-5 pb-5 mb-5  rounded" style="background-color: #6096B4;"><?php echo $d['nama_kategori']?></div>
             </a>
           </div>
-          <div class="col-md-6 " >
-            <a href="beranda.php?beranda=puisi" style="color: black; text-decoration: none;">
-                <div class="shadow p-3 pt-5 pb-5 mb-5 mb-5 bg-white rounded">Puisi</div>
-            </a>
-          </div>
-          <div class="col-md-6 ">
-            <a href="beranda.php?beranda=quotes" style="color: black; text-decoration: none;">
-              <div class="shadow p-3 pt-5 pb-5 mb-5 mb-5 bg-white rounded">Quotes</div>
-            </a>
-          </div>
-          <div class="col-md-6">
-            <a href="beranda.php?beranda=novel" style="color: black; text-decoration: none;">
-              <div class="shadow p-3 pt-5 pb-5 mb-5 mb-5 bg-white rounded">Novel</div>
-            </a>
-          </div>
+          <?php
+
+          }
+          ?>
+          <?php
+          include "db/koneksi.php";
+          if (isset($_POST['add'])) {
+            $posh_id       = $_POST['posh_id'];
+            $user_id       = $_POST['user_id'];
+            $komentar      = $_POST['komentar'];
+            $Tanggal       = $_POST['Tanggal'];
+            $add = $conn->query("INSERT INTO tb_komentar VALUES ('', '$posh_id',' $user_id ','$komentar',' $Tanggal')");
+            if ($add) {
+              echo ("<script LANGUAGE='JavaScript'>
+              window.alert('Berhasil tambah komentar');
+              window.location.href='detail.php?beranda=search';
+              </script>");
+        }
+      }
+?>
         </div>
       </div>
     <!-- CONTENT TEMGAH -->

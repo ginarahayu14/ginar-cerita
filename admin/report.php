@@ -1,29 +1,46 @@
 <style>
-    .mb{
-        margin-top: 3%;
-        background-color: #EBC7E6;
-        width: 50%;
-        padding: 5%;
-        border-radius: 5%;
-    }
-    .form-control{
-        width: 80%;
-    }
-    .container{
-        padding-top: 10%;
-        padding-bottom: 17%;
-    }
+  .table{
+    width: 90%;
+  }
 </style>
-<div class="container mt-5">
-   <center><form class="mb">
-  <div class="mb-3" style="">
-    <label for="" class="form-label"><b>Judul</b></label>
-    <input type="text" class="form-control" id="" aria-describedby="" name="judul">
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Post Id</th>
+      <th scope="col">User Id</th>
+      <th scope="col">Sebab</th>
+      <th scope="col">Alasan</th>
+    </tr>
+  </thead>
+
+</table>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting</p>
+        <a href="#" class="btn btn-primary">Go </a>
+      </div>
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="" class="form-label"><b>Judul</b></label>
-    <input type="text" class="form-control" id="">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting</p>
+        <a href="#" class="btn btn-primary">Go </a>
+      </div>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary" name="add">Submit</button>
-</form></center>
+</div>
+    </div>
+  </div>
 </div>
