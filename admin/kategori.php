@@ -1,63 +1,43 @@
-<style>
-    .table{
-        width: 70%;
-    }
-    .btn{
-        margin-top: 10%;
-        margin-left: 15%;
-        margin-bottom: 2%;
-        background-color: #ECF2FF;
-    }
-    .container{
-        background-color: #EBC7E6;
-        width: 80%;
-        padding-bottom: 6%;
-    }
-    .e{
-        color: green;
-    }
-    .c{
-        color: red;
-    }
-</style>
-<?php 
-if (isset($_POST['add'])){
-    $id =$_POST['id'];
-    $nama          = $_POST['nama'];
-      $add = mysqli_query($koneksi, "SELECT * FROM tb_kategori VALUES ('', '$nama')");
-     if ($add) {
-        echo (
-            "<script LANGUAGE='JavaScript'>
-            window.alert('Berhasil Di Publish');
-            window.location.href='index.php?halaman=kategori';
-            </script>"
-        );
-    }
-    }
-?>
-<div class="container">
-<a class="btn" href="index.php?halaman=add_kategori" role="button">Tambah Kategori</a>
-<center><table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nama Kategori</th>
-      <th scope="col">Aksi</th>
-    </tr>
-  </thead>
- 
+<div class="row mt-4 p-4">
+    <div class="col-md-8 mt-4">
+        <div class="card border-0 card-h-100">
+            <div class="card-header border-0 d-flex justify-content-between">
+                <h4 class="d-inline">
+                    Daftar Kategori
+                </h4>
+                <div class="">
+                    <button class="btn btn-primary btn-sm"><i class="bi bi-plus"></i>Kategori</button>
+                </div>
+            </div>
+            <!-- Table -->
+            <div class=" h-50 table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Kategori</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <?php $data = $conn->query("SELECT * FROM tb_kategori"); ?>
+                    <?php $no = 1; ?>
+                    <?php while ($row = $data->fetch_assoc()) : ?>
+                        <tr>
+                            <td><?php echo $no++ ?></td>
+                            <td><?php echo $row["nama"] ?></td>
+                            <td>
+                                <a href="keranjang_belanja.php?id=<?php echo $row['id'] ?>">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a> |
+                                <a href="keranjang_belanja.php?id=<?php echo $row['id'] ?>" class="text-danger">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endwhile ?>
+                </table>
 
-  <!-- <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td><a href="" class="e">Edit</a> l
-      <a href="" class="c">Hapus</a></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td>Thornton</td>
-    </tr> -->
-</table></center>
+            </div>
+        </div>
+    </div>
 </div>
