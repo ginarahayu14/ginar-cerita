@@ -43,6 +43,15 @@ include "../db/koneksi.php";
             case 'Add_report':
                 include "add_report.php";
                 break;
+            case 'kategori_add':
+                include "kategori_add.php";
+                break;
+            case 'edit-kategori':
+                include "edit_kategori.php";
+                break;
+            case 'delete-kategori':
+                include "delete_kategori.php";
+                break;
         }
     }
     ?>

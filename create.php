@@ -8,7 +8,7 @@ if (isset($_POST['add'])) {
     $namaFile       = $_FILES['sampul']['name'];
     $namaSementara  = $_FILES['sampul']['tmp_name'];
     move_uploaded_file($namaSementara, 'images/' . $namaFile);
-    $add = mysqli_query($conn, "INSERT INTO tb_post VALUES ('', '$judul', '$kategori', '$namaFile', '$isi', '', 'publis', '$user_id')");
+    $add = $conn->query("INSERT INTO tb_post VALUES ('', '$judul', '$kategori', '$namaFile', '$isi', '', 'publis', '$user_id')");
     var_dump($add);
     // if ($add) {
     //     echo ("<script LANGUAGE='JavaScript'>

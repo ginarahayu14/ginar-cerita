@@ -48,7 +48,7 @@
             ?>
             <?php while ($detail = $data->fetch_array()) : ?>
                 <h2><?php echo $detail['judul'] ?></h2>
-                <center><img src="images/<?php echo $detail['photo'] ?>"></center>
+                <center><img src="images/<?php echo $detail['photo'] ?>" width="100" height="150" class="mb-5"></center>
                 <?php echo $detail['isi'] . "<br>" ?>
                 <div class="mt-4">
                     <div class="d-flex justify-content-between align-items-end">
@@ -61,7 +61,7 @@
                             <!-- MENGHITUNG KOMENTAR -->
                         </div>
                         <div class="report">
-                            <button class="btn alert-danger">Laporkan</button>
+                            <a href=""><button class="btn alert-danger">Laporkan</button></a>
                         </div>
                     </div>
                     <hr>

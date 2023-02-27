@@ -1,6 +1,3 @@
-<?php
-  include '../db/koneksi.php';
-?>
 <style>
   .row {
     background-color: #EBC7E6;
@@ -22,12 +19,12 @@
 </style>
 
 <?php
-          if (isset($_POST['add'])) {
+          if (isset($_POST['update'])) {
         $nama       = $_POST['nama'];
-        $add = $conn->query("INSERT INTO tb_kategori(nama) VALUES ('', '$_POST[nama]')");
-        if ($add) {
+        $add = $conn->query("UPDATE tb_kategori SET nama='$nama' VALUES ('', '$_POST[nama]') WHERE nama='$nama'");
+        if ($update) {
           echo ("<script LANGUAGE='JavaScript'>
-          window.alert('Berhasil tambah nama');
+          window.alert('Berhasil di update nama');
           window.location.href='index.php?halaman=nama';
           </script>");
         }
@@ -40,7 +37,7 @@
       <h4>Tambah Kategori</h4>
       <div class="col-auto">
         <label for="" class="visually-hidden">Kategori</label>
-        <input type="text" class="form-control" id="" placeholder="nama kategori" name="nama">
+        <input type="text" class="form-control" id="" placeholder="nama" name="nama">
       </div>
       <div class="col-auto">
         <button type="submit" class="btn btn-primary mb-3" name="add">Tambah</button>

@@ -6,7 +6,7 @@
                     Daftar Kategori
                 </h4>
                 <div class="">
-                    <button class="btn btn-primary btn-sm"><i class="bi bi-plus"></i>Kategori</button>
+                    <a href="index.php?halaman=kategori_add"><button class="btn btn-primary btn-sm"><i class="bi bi-plus"></i>Kategori</button></a>
                 </div>
             </div>
             <!-- Table -->
@@ -26,10 +26,10 @@
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row["nama"] ?></td>
                             <td>
-                                <a href="keranjang_belanja.php?id=<?php echo $row['id'] ?>">
+                                <a href="index.php?id=<?php echo $row['id'] ?>&halaman=edit-kategori">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a> |
-                                <a href="keranjang_belanja.php?id=<?php echo $row['id'] ?>" class="text-danger">
+                                <a href="index.php?id=<?php echo $row['id']?>&halaman=delete-kategori" class="text-danger">
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
                             </td>
