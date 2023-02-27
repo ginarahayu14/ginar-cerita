@@ -1,5 +1,7 @@
 <?php
     include 'header.php';
+    include '..db/koneksi.php';
+
 ?>
 <style>
     .form-control{

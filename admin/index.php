@@ -46,7 +46,7 @@ include "../db/koneksi.php";
             case 'kategori_add':
                 include "kategori_add.php";
                 break;
-            case 'edit-kategori':
+            case 'edit_kategori':
                 include "edit_kategori.php";
                 break;
             case 'delete-kategori':

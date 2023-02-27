@@ -26,7 +26,7 @@
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row["nama"] ?></td>
                             <td>
-                                <a href="index.php?id=<?php echo $row['id'] ?>&halaman=edit-kategori">
+                                <a href="index.php?id=<?php echo $row['id'] ?>&nama=<?php echo $row["nama"] ?>&update=update&halaman=edit_kategori">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a> |
                                 <a href="index.php?id=<?php echo $row['id']?>&halaman=delete-kategori" class="text-danger">
