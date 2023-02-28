@@ -4,11 +4,11 @@
   }
 </style>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
     <div class="col-md-8 ml-5">
       <div class="card-header border-0 d-flex justify-content-between">
-                <h4 class="d-inline">
+      <h4 class="d-inline">
                     Laporan
                 </h4>
                 <div class="">
@@ -25,21 +25,19 @@
       <th scope="col">Alasan</th>
     </tr>
   </thead>
-
 </table>
     </div>
-    <div class="col-md-4">
-      <div class="row">
-  <div class="col-sm-6 mb-3 mb-sm-0">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting</p>
-        <a href="#" class="btn btn-primary">Go </a>
-      </div>
-    </div>
 
+    <div class="col-md-4">
+     <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Pelanggaran Hak Cipta</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+  <div class="card-footer">
+    Card footer
+  </div>
 </div>
-    </div>
   </div>
 </div>

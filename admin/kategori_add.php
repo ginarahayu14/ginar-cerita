@@ -22,7 +22,7 @@
 </style>
 
 <?php
-          if (isset($_POST['add'])) {
+        if (isset($_POST['add'])) {
         $id       = $_POST['id'];
         $nama     = $_POST['nama'];
         $add = $conn->query("INSERT INTO tb_kategori VALUES ('', '$_POST[nama]')");

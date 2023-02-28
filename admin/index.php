@@ -40,7 +40,7 @@ include "../db/koneksi.php";
             case 'kategori':
                 include "kategori.php";
                 break;
-            case 'Add_report':
+            case 'add_report':
                 include "add_report.php";
                 break;
             case 'kategori_add':

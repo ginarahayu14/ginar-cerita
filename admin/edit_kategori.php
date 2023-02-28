@@ -30,7 +30,7 @@
              $update = $conn->query("UPDATE tb_kategori SET nama='$nama2' WHERE id='$id'");
                  if ($update) {
                         echo ("<script LANGUAGE='JavaScript'>
-                        window.alert('Berhasil di update nama');
+                        window.alert('Berhasil diupdate nama');
                         window.location.href='index.php?halaman=kategori';
                         </script>");
         }
