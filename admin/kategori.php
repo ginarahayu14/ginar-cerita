@@ -1,7 +1,7 @@
 <div class="row mt-4 p-4">
     <div class="col-md-8 mt-4">
         <div class="card border-0 card-h-100">
-            <div class="card-header border-0 d-flex justify-content-between">
+            <div class="card-header border-0 d-flex justify-content-between" style="background-color: #EBC7E6; width: 130%;">
                 <h4 class="d-inline">
                     Daftar Kategori
                 </h4>
@@ -11,7 +11,7 @@
             </div>
             <!-- Table -->
             <div class=" h-50 table-wrapper-scroll-y my-custom-scrollbar">
-                <table class="table mt-4">
+                <table class="table " style="background-color: #ECF2FF; width: 130%;">
                     <thead>
                         <tr>
                             <th>No</th>

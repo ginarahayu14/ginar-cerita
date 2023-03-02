@@ -1,21 +1,25 @@
+<?php
+  include 'header.php';
+  include '../db/koneksi.php';
+?>
 <style>
   .table{
-    width: 90%;
+    width: 130%;
+  }
+  .container{
+    margin-top: 8%;
   }
 </style>
 
 <div class="container">
   <div class="row">
     <div class="col-md-8 ml-5">
-      <div class="card-header border-0 d-flex justify-content-between">
+      <div class="card-header border-0 d-flex justify-content-between" style="background-color: #EBC7E6; width: 130%;">
       <h4 class="d-inline">
                     Laporan
                 </h4>
-                <div class="">
-                    <a href="index.php?halaman=add_report"><button class="btn btn-primary btn-sm"><i class="bi bi-plus"></i>report</button></a>
-                </div>
             </div>
-      <table class="table">
+      <table class="table" style="background-color: #ECF2FF;">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -23,21 +27,28 @@
       <th scope="col">User Id</th>
       <th scope="col">Sebab</th>
       <th scope="col">Alasan</th>
+      <th scope="col">Aksi</th>
+
     </tr>
   </thead>
+  <?php $data = $conn->query("SELECT * FROM tb_report"); ?>
+                    <?php $no = 1; ?>
+                    <?php while ($row = $data->fetch_assoc()) : ?>
+                        <tr>
+                            <td><?php echo $no++ ?></td>
+                            <td><?php echo $row["user_id"] ?></td>
+                            <td><?php echo $row["post_id"] ?></td>
+                            <td><?php echo $row["sebab"] ?></td>
+                            <td><?php echo $row["Alasan"] ?></td>
+                            <td>
+                                <a href="index.php?id=<?php echo $row['id']?>&halaman=delete_report" class="text-danger">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endwhile ?>
 </table>
     </div>
+</div>
 
-    <div class="col-md-4">
-     <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Pelanggaran Hak Cipta</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
-  <div class="card-footer">
-    Card footer
-  </div>
-</div>
-  </div>
-</div>
+   

@@ -52,7 +52,12 @@ include "../db/koneksi.php";
             case 'delete-kategori':
                 include "delete_kategori.php";
                 break;
+            case 'delete_report':
+                include "delete_report.php";
+                break;
         }
+    }else{
+        include "report.php";
     }
     ?>
 </div>

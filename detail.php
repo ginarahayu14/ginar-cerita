@@ -30,7 +30,7 @@
                             <img src="images/<?php echo $a['photo'] ?>" width="100%">
                         </div>
                         <div class="col-md-8 pr-md-2 right-content-description">
-                            <b style="margin-bottom: 22px;"><?php echo $a['judul'] ?></b>
+                            <b style="margin-bottom: 22px;"><?php echo $a['judul'] ?></b><br>
                             <?php echo substr($a['isi'], 0, 150) . " ... " ?>
                         </div>
                     </div>
@@ -47,9 +47,9 @@
             $data = $conn->query("SELECT * FROM tb_post where id='$id'");
             ?>
             <?php while ($detail = $data->fetch_array()) : ?>
-                <h2><?php echo $detail['judul'] ?></h2>
+                <center><h2><?php echo $detail['judul'] ?></h2></center><br>
                 <center><img src="images/<?php echo $detail['photo'] ?>" width="100" height="150" class="mb-5"></center>
-                <?php echo $detail['isi'] . "<br>" ?>
+                <center><?php echo $detail['isi'] . "<br>" ?></center>
                 <div class="mt-4">
                     <div class="d-flex justify-content-between align-items-end">
                         <div class="total-komentar">
@@ -61,7 +61,7 @@
                             <!-- MENGHITUNG KOMENTAR -->
                         </div>
                         <div class="report">
-                            <a href=""><button class="btn alert-danger">Laporkan</button></a>
+                            <a href="add_report.php"><button class="btn alert-danger">Laporkan</button></a>
                         </div>
                     </div>
                     <hr>

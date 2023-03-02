@@ -13,7 +13,7 @@
     <style>
       body
       {
-        background-color: #FFA3FD;
+        background-color: #F7C8E0;
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -29,9 +29,6 @@
           <b class="ml-2">Ineffable</b>  
         </a>
         <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="login.php">Login</a>
           </li>
@@ -57,8 +54,56 @@
       </div>
     </div>
     </div>
+
+    <div class="to mt-5">
+      <h3 class="text-center">Lihat Ceritamu...</h3>
+      <div class="container text-center mt-5">
+      <div class="row">
+        <div class="col">
+          <div class="item"><img src="images/tv.svg" alt="tv"><br>
+          Diproduksi menjadi film</div>
+        </div>
+        <div class="col">
+          <div class="item"><img src="images/vi.svg" alt="tv"><br>
+          Diadaptasi menjadi serial TV</div>
+        </div>
+        <div class="col">
+          <div class="item"><img src="images/book.svg" alt="tv"><br>
+          Diterbitkan</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<div class="container mt-5">
+  <center><h3 style="padding-top: 8%;">Baca & Tulis <br> Ceritamu Sekarang</h3></center>
+  <div class="row mt-5">
+    <div class="col-md-6 pt-5">
+             <img src="images/raw.svg" alt="" srcset="" width="500">
+    </div>
+    <div class="col-md-6 mt-5">
+      <h4>Ineffable Books</h4><br>
+       <p>Ceritamu akan menjadi komponen istimewa di rak buku
+          Ineffable Books bercita-cita untuk mengenali dan mewakili suara-suara yang beragam dengan 
+          mengubah cerita Ineffable menjadi buku yang diterbitkan di seluruh dunia.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5" style="padding-top: 10%;">
+  <h2>Cinta Dalam Diam</h2>
+  <div class="row">
+    <div class="col-8">
+      <p>Novel ini menceritakan kisah tentang "Percintaan", yaitu sebuah kisah pernikahan yang dijodohkan. Kisah ini bercerita tentang pasangan suami istri yang tetap menerima pernikahan ini walaupun tidak didasari cinta, tapi mereka melakukannya karena Allah,
+         dan akhirnya tumbuhlah benih-benih cinta diantara mereka.</p>
+    </div>
+    <div class="col-4">
+      <img src="images/buku2.png" alt="" width="400" style="margin-top: -35%;">
+</div>
+  </div>
+</div>
       
-    <div class="container pt-5" style="background-color: #FFA3FD;">
+    <!-- <div class="container pt-5 pb-5" style="background-color: #ECF2FF;">
       <div class="container text-center">
       <div class="shadow p-3 mb-5 bg-body-tertiary rounded" style="background-color: #FFD1D1;"><marquee behavior="" direction=""><h2 class="mb-2 pt-3">Baca Semua Episodenya Sekarang!!!</h2></marquee>
       </div>
@@ -79,11 +124,11 @@
     </div>
     </div>    
 
-    <div class="container text-center mt-5" style="background-color:  #FFA3FD;">
+    <div class="container text-center mt-5 pb-5" style="background-color:  #ECF2FF;">
       <div class="row">
         <h3 class="pt-5 pb-3">Rekomendasi Bacaan Untuk Anda</h3>
         <div class="col">
-          <div class="shadow-lg p-3 mt-5 mb-5 bg-body-tertiary  rounded btn-outline-danger"><h4 class="mt-3 
+          <div class="shadow-lg p-3 mt-5 mb-5 bg-body-tertiary  rounded btn-outline-dark"><h4 class="mt-3 
           novel">PUISI</h4></div>
           <div class="row">
             <div class="col">
@@ -98,7 +143,7 @@
           </div>
         </div>
         <div class="col">
-        <div class="shadow-lg p-3 mt-5 mb-5 bg-body-tertiary rounded btn-outline-danger"><h4 class="mt-3 
+        <div class="shadow-lg p-3 mt-5 mb-5 bg-body-tertiary rounded btn-outline-dark"><h4 class="mt-3 
           puisi">QUOTES</h4></div>
           <div class="row">
             <div class="col">
@@ -112,43 +157,9 @@
             </div>
           </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="container text-center mt-5 pb-5" style="background-color:  #FFA3FD;">
-      <div class="row">
-        <div class="col">
-          <div class="shadow-lg p-3 mt-5 mb-5 bg-body-tertiary  rounded btn-outline-danger"><h4 class="mt-3 
-          novel">CERPEN</h4></div>
-          <div class="row">
-            <div class="col">
-            <img src="images/mata1.jpg" alt="" srcset="" width="150" height="200">             
-            </div>
-            <div class="col">
-            <img src="images/antologi.png" alt="" srcset="" width="150" height="200">             
-            </div>
-            <div class="col">
-            <img src="images/rutan.jpg" alt="" srcset="" width="150" height="200">             
-            </div>
-          </div>
-        </div>
-        <div class="col">
-        <div class="shadow-lg p-3 mt-5 mb-5 bg-body-tertiary rounded btn-outline-danger"><h4 class="mt-3 
-          puisi">NOVEL</h4></div>
-          <div class="row">
-            <div class="col">
-            <img src="images/nov1.jpg" alt="" srcset="" width="150" height="200">             
-            </div>
-            <div class="col">
-            <img src="images/nov2.jfif" alt="" srcset="" width="150" height="200">             
-            </div>
-            <div class="col">
-            <img src="images/nov3.webp" alt="" srcset="" width="150" height="200">             
-            </div>
-          </div>
-      </div>
-    </div>
-    </div>
-    </div>
+    
       
     <!-- Optional JavaScript; choose one of the two! -->
 
