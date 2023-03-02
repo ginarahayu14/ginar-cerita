@@ -40,7 +40,7 @@
         <!-- KONTEN KANAN -->
 
         <!-- KONTEN KIRI -->
-        <div class="col-md-6 paragraf">
+        <div class="col-md-8 paragraf">
             <?php
             $id = $_GET['id'];
             $view = $conn->query("UPDATE tb_post SET view= view+1 WHERE id='$id'");

@@ -11,7 +11,7 @@ include "db/koneksi.php";
     $namaFile       = $_FILES['sampul']['name'];
     $namaSementara  = $_FILES['sampul']['tmp_name'];
     move_uploaded_file($namaSementara, 'images/'.$namaFile);
-    $update_publis = mysqli_query($koneksi, "UPDATE tb_post SET  judul='$judul', kategori='$kategori', photo='$namaFile', isi='$isi', view='$view', status='publis', user_id='$user_id' WHERE id='$post_id'");
+    $update_publis = $conn->query($conn, "UPDATE tb_post SET  judul='$judul', kategori='$kategori', photo='$namaFile', isi='$isi', view='$view', status='publis', user_id='$user_id' WHERE id='$post_id'");
     if ($update_publis) {
       echo ("<script LANGUAGE='JavaScript'>
       window.alert('Berhasil Diubah dan Dipublis');
