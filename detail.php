@@ -9,6 +9,9 @@
         margin-block-start: 1em;
         margin-block-end: 1em;
     }
+    .pagination{
+        margin-left: 35%;
+    }
 </style>
 
 
@@ -31,7 +34,7 @@
                         </div>
                         <div class="col-md-8 pr-md-2 right-content-description">
                             <b style="margin-bottom: 22px;"><?php echo $a['judul'] ?></b><br>
-                            <?php echo substr($a['isi'], 0, 150) . " ... " ?>
+                            <?php echo substr($a['isi'], 0, 10) . " ... " ?>
                         </div>
                     </div>
                 </div>
@@ -48,8 +51,23 @@
             ?>
             <?php while ($detail = $data->fetch_array()) : ?>
                 <center><h2><?php echo $detail['judul'] ?></h2></center><br>
-                <center><img src="images/<?php echo $detail['photo'] ?>" width="100" height="150" class="mb-5"></center>
-                <center><?php echo $detail['isi'] . "<br>" ?></center>
+                <center><img src="images/<?php echo $detail['photo'] ?>" width="120" height="150" class="mb-5"></center>
+                <?php echo $detail['isi']?>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">next</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>
                 <div class="mt-4">
                     <div class="d-flex justify-content-between align-items-end">
                         <div class="total-komentar">

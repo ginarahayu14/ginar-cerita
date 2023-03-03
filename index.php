@@ -13,7 +13,7 @@
     <style>
       body
       {
-        background-color: #F7C8E0;
+        background-color: #A0616A;
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -26,14 +26,14 @@
       <div class="container">
         <a class="navbar-brand" href="index.php">
           <img src="images/ine-logo.png" alt="" width="30" class="d-inline-block align-text-top mr">
-          <b class="ml-2">Ineffable</b>  
+          <b class="ml-2 text-white">Ineffable</b>  
         </a>
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link text-white" href="login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="daftar.php">Daftar </a>
+            <a class="nav-link text-white" href="daftar.php">Daftar </a>
           </li>
         </ul>
       </div>
@@ -101,6 +101,10 @@
       <img src="images/buku2.png" alt="" width="400" style="margin-top: -35%;">
 </div>
   </div>
+</div>
+
+<div class="container-fluid text-center py-2" style="background-color: #F6E6C2;">
+    <h6 class="pt-2">Ineffable l Baca & Cerita</h6>
 </div>
       
     <!-- <div class="container pt-5 pb-5" style="background-color: #ECF2FF;">
