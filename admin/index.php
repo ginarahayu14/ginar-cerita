@@ -10,24 +10,24 @@ include "../db/koneksi.php";
     </div>
     <div class="sidebar-menu">
         <li class="item">
-            <a href="index.php?halaman=report" class="menu-btn text-dark"> <i class="fas fa-desktop"></i><span>Report</span></a>
+            <a href="index.php?halaman=report" class="menu-btn text-dark"><i class="fa-regular fa-flag"></i><span>Report</span></a>
         </li>
         <li class="item">
-            <a href="index.php?halaman=kategori" class="menu-btn text-dark"> <i class="fas fa-desktop"></i><span>Kategori</span> </a>
+            <a href="index.php?halaman=kategori" class="menu-btn text-dark"><i class="fa-solid fa-list"></i><span>Kategori</span> </a>
         </li>
         <li class="item">
-            <a href="../logout.php" class="menu-btn text-dark"> <i class="fas fa-desktop"></i><span>Logout</span> </a>
+            <a href="../logout.php" class="menu-btn text-dark"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span> </a>
         </li>
     </div>
 </div>
 <div class="maint-content">
     <header>
-        <h2>
+        <h3>
             <label for="nav-toggle">
-                <span class="las la-bars"></span>
+                <i class="fa-solid fa-bars"></i>
             </label>
             _Ineffable
-        </h2>
+        </h3>
     </header>
     <?php
     if (isset($_GET['halaman'])) {

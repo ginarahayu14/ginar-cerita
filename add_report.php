@@ -16,7 +16,7 @@
         width: 80%;
     }
     .container{
-        background-color: #F7C8E0;
+        background-color: #A0616A;
         width: 100%;
         padding-top: 15%;
     }
