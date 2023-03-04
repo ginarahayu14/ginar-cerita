@@ -53,33 +53,21 @@
                 <center><h2><?php echo $detail['judul'] ?></h2></center><br>
                 <center><img src="images/<?php echo $detail['photo'] ?>" width="120" height="150" class="mb-5"></center>
                 <?php echo $detail['isi']?>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">next</a></li>
-                        <li class="page-item">
-                        <a class="page-link" href="" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                        </li>
-                    </ul>
-                    </nav>
                 <div class="mt-4">
                     <div class="d-flex justify-content-between align-items-end">
                         <div class="total-komentar">
                             <!-- MENGHITUNG KOMENTAR -->
-
                             <?php $komen = $conn->query("SELECT * FROM tb_comment WHERE post_id='$id'") ?>
                             <?php $komen_hitung = mysqli_num_rows($komen) ?>
                             <h5><?php echo $komen_hitung ?> Komentar</h5>
                             <!-- MENGHITUNG KOMENTAR -->
                         </div>
                         <div class="report">
-                            <a href="add_report.php"><button class="btn alert-danger">Laporkan</button></a>
+                        <!-- CEK POSTINGAN KITA ATU BUKAN -->
+                        <?php if ($detail['user_id'] != $_SESSION['id']) : ?>
+                            <a href="add_report.php?id=<?php echo $detail['id'] ?>"><button class="btn alert-danger">Laporkan</button></a>
+                        <?php endif ?>
+                        <!-- CEK POSTINGAN KITA ATU BUKAN -->
                         </div>
                     </div>
                     <hr>
@@ -125,10 +113,15 @@
                 ?>
                 <?php while ($showcomment =  $komen->fetch_array()) {
                     echo $showcomment['username'] . "<br>";
-                    echo $showcomment['comment'] . "<hr>";
+                    echo $showcomment['comment'] . "<br>";
+                    if ($showcomment['user_id'] == $_SESSION['id']) {
+                        echo "<a href=''>Hapus Komentar</a>";
+                    }
+                    echo "<hr>";
                 }
                 ?>
-            <?php endwhile; ?>
+                <a href=""></a>
+                <?php endwhile; ?>
             <!-- MENAMPILKAN KOMENTAR -->
         </div>
         <!-- KONTEN KIRI -->

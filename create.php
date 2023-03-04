@@ -9,14 +9,13 @@ if (isset($_POST['add'])) {
     $namaSementara  = $_FILES['sampul']['tmp_name'];
     move_uploaded_file($namaSementara, 'images/' . $namaFile);
     $add = $conn->query("INSERT INTO tb_post VALUES ('', '$judul', '$kategori', '$namaFile', '$isi', '', 'publis', '$user_id')");
-    var_dump($add);
-    // if ($add) {
-    //     echo ("<script LANGUAGE='JavaScript'>
-    //         window.alert('Berhasil Di Publish');
-    //         window.location.href='beranda.php?beranda=profile&profile=cerita';
-    //         </script>"
-    //     );
-    // }
+    if ($add) {
+        echo ("<script LANGUAGE='JavaScript'>
+            window.alert('Berhasil Di Publish');
+            window.location.href='beranda.php?beranda=profile&profile=cerita';
+            </script>"
+        );
+    }
 }
 if (isset($_POST['arsip'])) {
     $judul          = $_POST['judul'];
@@ -65,8 +64,6 @@ if (isset($_POST['arsip'])) {
         }
 
     </style>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css"> -->
 
 </head>
 
