@@ -17,7 +17,7 @@
     }
     .container{
         background-color: #A0616A;
-        width: 100%;
+        width: 50%;
         padding-top: 15%;
     }
     .from{
@@ -30,16 +30,16 @@
 <div class="container  pt-5 pb-5">
     <form method="POST" class="from">
         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-white" style="width: 80%; text-align: center;">
-            <b>Laporkan Cerita</b>
+            <b class="">Laporkan Cerita</b>
         </div>
-        <p class="d" style="padding-left: 25%;">Why are you reporting this story?</p>
+        <p class="d text-white" style="padding-left: 25%;">Why are you reporting this story?</p>
         <div class="mb-3">
-            <label for="" class="form-label">Judul</label>
+            <label for="" class="form-label text-white">Judul</label>
             <input type="text" class="form-control" id="" aria-describedby="" name="judul" value="<?php echo $hasil['judul'] ?>">
             <input type="hidden" class="form-control" id="" aria-describedby="" name="post_id" value="<?php echo $hasil['id'] ?>">
             <input type="hidden" class="form-control" id="" aria-describedby="" name="user_id" value="<?php echo $_SESSION['id'] ?>">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 text-white">
             <label for=""><b>Sebab</b></label>
             <select class="form-select" aria-label="Default select example" value="" name="sebab">
                 <option>inappropraite content</option>
@@ -48,8 +48,8 @@
                 <option value="Menyakiti diri sendiri">Menyakiti diri sendiri</option>
             </select>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"><b>Alasan</b></label>
+        <div class="mb-3 ">
+            <label for="exampleFormControlTextarea1" class="form-label text-white"><b>Alasan</b></label>
             <p>Tolong jelaskan pelanggaran Pedoman Konten kami dan di mana letaknya dalam cerita.</p>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" value="tulis alasan" name="alasan"></textarea>
         </div>

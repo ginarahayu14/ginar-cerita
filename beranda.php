@@ -209,6 +209,8 @@ if (!isset($_SESSION['login'])) {
                 include "search_page.php";
             } elseif ($_GET['beranda'] == "search") {
                 include "search.php";
+            } elseif ($_GET['beranda'] == "add-report") {
+                include "add_report.php";
             } else {
                 include "perpustakaan.php";
             }
