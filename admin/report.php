@@ -60,10 +60,7 @@
                     <div class="col-4">
                       <img src="../images/wa15.jpg" alt="" srcset="" width="30" style="border-radius: 50%;">
                     </div>
-                    <div class="col-8">
-                     
-
-                     
+                    <div class="col-8">                  
                       <h5>yhuiou</h5>
                     </div>
                   </div>
