@@ -55,16 +55,25 @@
           </table>
       </div>
         <div class="col-sm-4 mt-5">
+         <?php 
+          $sql = "SELECT * FROM tb_report";
+          $result = $conn->query($sql);
+          while($menu = $result->fetch_assoc()){
+        ?>
           <div class="card p-5">
                   <div class="row">
                     <div class="col-4">
                       <img src="../images/wa15.jpg" alt="" srcset="" width="30" style="border-radius: 50%;">
                     </div>
                     <div class="col-8">                  
-                      <h5>yhuiou</h5>
+                      <h5><?php echo $menu['user_id']; ?></h5>
+                      <h5><?php echo $menu['post_id']; ?></h5>
+                      <h5><?php echo $menu['sebab']; ?></h5>
+                      <h5><?php echo $menu['Alasan']; ?></h5>
                     </div>
                   </div>
             </div>
+            <?php } ?>
         </div>
     </div>
 </div>

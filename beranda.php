@@ -211,6 +211,8 @@ if (!isset($_SESSION['login'])) {
                 include "search.php";
             } elseif ($_GET['beranda'] == "add-report") {
                 include "add_report.php";
+            } elseif ($_GET['beranda'] == "delete-komentar") {
+                include "delete_komentar.php";
             } else {
                 include "perpustakaan.php";
             }

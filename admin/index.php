@@ -15,6 +15,9 @@ include "../db/koneksi.php";
         <li class="item">
             <a href="index.php?halaman=kategori" class="menu-btn text-dark"><i class="fa-solid fa-list"></i><span>Kategori</span> </a>
         </li>
+         <li class="item">
+            <a href="index.php?halaman=admin" class="menu-btn text-dark"><i class="fa-solid fa-users"></i><span>Users</span> </a>
+        </li>
         <li class="item">
             <a href="../logout.php" class="menu-btn text-dark"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span> </a>
         </li>
@@ -54,6 +57,9 @@ include "../db/koneksi.php";
                 break;
             case 'delete_report':
                 include "delete_report.php";
+                break;
+            case 'admin':
+                include "login.php";
                 break;
         }
     }else{
