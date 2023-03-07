@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: Mar 06, 2023 at 08:00 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 07 Mar 2023 pada 08.08
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perpustakaan`
+-- Struktur dari tabel `perpustakaan`
 --
 
 CREATE TABLE `perpustakaan` (
@@ -34,7 +34,7 @@ CREATE TABLE `perpustakaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `perpustakaan`
+-- Dumping data untuk tabel `perpustakaan`
 --
 
 INSERT INTO `perpustakaan` (`id`, `post_id`, `user_id`) VALUES
@@ -46,7 +46,19 @@ INSERT INTO `perpustakaan` (`id`, `post_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_comment`
+-- Struktur dari tabel `tb_admin`
+--
+
+CREATE TABLE `tb_admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_comment`
 --
 
 CREATE TABLE `tb_comment` (
@@ -57,18 +69,20 @@ CREATE TABLE `tb_comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_comment`
+-- Dumping data untuk tabel `tb_comment`
 --
 
 INSERT INTO `tb_comment` (`id`, `post_id`, `user_id`, `comment`) VALUES
 (1, 9, 4, 'aaaa'),
 (2, 9, 4, 'bbbb'),
-(3, 18, 4, 'qqqqqqq');
+(3, 18, 4, 'qqqqqqq'),
+(4, 18, 5, 'rgth'),
+(5, 20, 5, 'dhsdjhjhjh');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kategori`
+-- Struktur dari tabel `tb_kategori`
 --
 
 CREATE TABLE `tb_kategori` (
@@ -77,7 +91,7 @@ CREATE TABLE `tb_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_kategori`
+-- Dumping data untuk tabel `tb_kategori`
 --
 
 INSERT INTO `tb_kategori` (`id`, `nama`) VALUES
@@ -89,7 +103,7 @@ INSERT INTO `tb_kategori` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_post`
+-- Struktur dari tabel `tb_post`
 --
 
 CREATE TABLE `tb_post` (
@@ -104,7 +118,7 @@ CREATE TABLE `tb_post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_post`
+-- Dumping data untuk tabel `tb_post`
 --
 
 INSERT INTO `tb_post` (`id`, `judul`, `kategori_id`, `photo`, `isi`, `view`, `status`, `user_id`) VALUES
@@ -113,16 +127,15 @@ INSERT INTO `tb_post` (`id`, `judul`, `kategori_id`, `photo`, `isi`, `view`, `st
 (14, 'aaa', 0, '118595048-288-k474404.jpg', 'fsfsdfdsf', 29, 'publis', 3),
 (15, 'aaa', 0, '190494164-288-k461028.jpg', 'fsefsfsdfd', 43, 'publis', 3),
 (16, 'Fatimah', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 5, 'publis', 4),
-(17, 'rtrt', 2, '200517743-288-k542360.jpg', 'etert', 0, 'publis', 4),
-(18, 'aaaaaaaa', 4, '12.jpg', 'eterere', 103, 'publis', 4),
-(20, 'bb', 5, '185125230-288-k777566.jpg', 'fdgh', 2, 'publis', 4),
-(21, 'nnnn', 2, '185125230-288-k777566.jpg', '                                klkk jjjjj                                                ', 0, 'publis', 5),
+(17, 'rtrt', 2, '200517743-288-k542360.jpg', 'etert', 6, 'publis', 4),
+(18, 'aaaaaaaa', 4, '12.jpg', 'eterere', 117, 'publis', 4),
+(20, 'bb', 5, '185125230-288-k777566.jpg', 'fdgh', 11, 'publis', 4),
 (22, 'wwwfxx', 5, 'Q3LVs9ka-piala12_copy.png', '                                                sssss', 0, 'publis', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_report`
+-- Struktur dari tabel `tb_report`
 --
 
 CREATE TABLE `tb_report` (
@@ -134,7 +147,7 @@ CREATE TABLE `tb_report` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_report`
+-- Dumping data untuk tabel `tb_report`
 --
 
 INSERT INTO `tb_report` (`id`, `post_id`, `user_id`, `sebab`, `Alasan`) VALUES
@@ -144,7 +157,7 @@ INSERT INTO `tb_report` (`id`, `post_id`, `user_id`, `sebab`, `Alasan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -158,7 +171,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `nama`, `username`, `email`, `password`, `photo`, `role`) VALUES
@@ -170,7 +183,7 @@ INSERT INTO `tb_user` (`id`, `nama`, `username`, `email`, `password`, `photo`, `
 --
 
 --
--- Indexes for table `perpustakaan`
+-- Indeks untuk tabel `perpustakaan`
 --
 ALTER TABLE `perpustakaan`
   ADD PRIMARY KEY (`id`),
@@ -178,7 +191,13 @@ ALTER TABLE `perpustakaan`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `tb_comment`
+-- Indeks untuk tabel `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_comment`
 --
 ALTER TABLE `tb_comment`
   ADD PRIMARY KEY (`id`),
@@ -186,13 +205,13 @@ ALTER TABLE `tb_comment`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `tb_kategori`
+-- Indeks untuk tabel `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_post`
+-- Indeks untuk tabel `tb_post`
 --
 ALTER TABLE `tb_post`
   ADD PRIMARY KEY (`id`),
@@ -200,53 +219,59 @@ ALTER TABLE `tb_post`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `tb_report`
+-- Indeks untuk tabel `tb_report`
 --
 ALTER TABLE `tb_report`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `perpustakaan`
+-- AUTO_INCREMENT untuk tabel `perpustakaan`
 --
 ALTER TABLE `perpustakaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `tb_comment`
+-- AUTO_INCREMENT untuk tabel `tb_admin`
 --
-ALTER TABLE `tb_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `tb_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_kategori`
+-- AUTO_INCREMENT untuk tabel `tb_comment`
+--
+ALTER TABLE `tb_comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tb_post`
+-- AUTO_INCREMENT untuk tabel `tb_post`
 --
 ALTER TABLE `tb_post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `tb_report`
+-- AUTO_INCREMENT untuk tabel `tb_report`
 --
 ALTER TABLE `tb_report`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
