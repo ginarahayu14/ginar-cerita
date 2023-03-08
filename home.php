@@ -29,7 +29,8 @@
 <div class="greeting-and-content-settings">
     <div class="module-content">
         <?php
-        $sel = $conn->query("SELECT * FROM tb_user WHERE id='$_SESSION[id]'");
+        // var_dump($_SESSION);
+        $sel = $conn->query("SELECT * FROM tb_user WHERE email='$_SESSION[email]'");
         while ($nam = mysqli_fetch_array($sel)) {
         ?>
             <div class="greeting">

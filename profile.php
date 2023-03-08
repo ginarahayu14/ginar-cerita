@@ -1,5 +1,6 @@
 <?php 
-  $show_user = $conn->query("SELECT * FROM tb_user WHERE id='$_SESSION[id]'");
+  include "db/koneksi.php";
+  $show_user = $conn->query("SELECT * FROM tb_user WHERE email='$_SESSION[email]'");
   while ($show = mysqli_fetch_array($show_user)){
 ?>
 
@@ -34,7 +35,7 @@
           </div>
 
           <div class="pb-md-5 d-flex justify-content-center">
-            <a href="beranda.php?beranda=edit_profile&user_id=<?php echo $_SESSION['id']?>">
+            <a href="beranda.php?beranda=edit_profile&user_email=<?php echo $_SESSION['email']?>">
               <button type="button" class="btn btn-primary">Edit Profile    <i class="fas fa-edit"></i></button>
             </a>
           </div>

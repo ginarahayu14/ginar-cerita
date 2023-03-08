@@ -29,7 +29,7 @@
                                 <a href="index.php?id=<?php echo $row['id'] ?>&nama=<?php echo $row["nama"] ?>&update=update&halaman=edit_kategori">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a> |
-                                <a href="index.php?id=<?php echo $row['id']?>&halaman=delete-kategori" class="text-danger">
+                                <a href="index.php?id=<?php echo $row['id']?>&halaman=delete-kategori" onclick="return confirm ('Yakin dihapus ?')" class="text-danger">
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
                             </td>

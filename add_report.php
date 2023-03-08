@@ -37,7 +37,7 @@
             <label for="" class="form-label text-white">Judul</label>
             <input type="text" class="form-control" id="" aria-describedby="" name="judul" value="<?php echo $hasil['judul'] ?>">
             <input type="hidden" class="form-control" id="" aria-describedby="" name="post_id" value="<?php echo $hasil['id'] ?>">
-            <input type="hidden" class="form-control" id="" aria-describedby="" name="user_id" value="<?php echo $_SESSION['id'] ?>">
+            <input type="hidden" class="form-control" id="" aria-describedby="" name="user_id" value="<?php echo $_SESSION['email'] ?>">
         </div>
         <div class="mb-3 text-white">
             <label for=""><b>Sebab</b></label>

@@ -1,9 +1,18 @@
 <?php
 include "db/koneksi.php";
 session_start();
-if (!isset($_SESSION['login'])) {
-    header('location:index.php');
+
+if ($_SESSION ['level'] ="") {
+  header("location: . ./index.php");
+  # code...
 }
+
+if ($_SESSION ['level'] =="user") {
+  header("location: beranda.php");
+  # code...
+}
+
+echo $_SESSION['level'];
 ?>
 
 <!DOCTYPE html>
@@ -157,7 +166,7 @@ if (!isset($_SESSION['login'])) {
 
                     <li class="nav-item dropdown">
                         <?php
-                        $select_user = $conn->query("SELECT * FROM tb_user WHERE id = '$_SESSION[id]' ");
+                        $select_user = $conn->query("SELECT * FROM tb_user WHERE email = '$_SESSION[email]' ");
                         while ($u = mysqli_fetch_array($select_user)) {
                         ?>
                             <?php if (empty($u['photo'])) : ?>

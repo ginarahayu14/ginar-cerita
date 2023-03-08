@@ -1,69 +1,285 @@
-<?php
-  include 'header.php';
-  include '../db/koneksi.php';
-?>
 <style>
-  .table{
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    position: relative;
     width: 100%;
-  }
-  .container{
-    margin-top: 8%;
-  }
-  .btn {
-    background-color: #EBC7E6;
-    margin-bottom: 1%;
-  }
+    height: 100vh;
+    display: flex;
+}
+section .img-box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+section .img-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9f1c, #2ec4b6);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+section .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section .content-box {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+section .content-box .form-box {
+    width: 50%;
+}
+section .content-box .form-box h2 {
+    color: #166d67;
+    font-weight: 600;
+    font: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff9f1c;
+    display: inline-block;
+    letter-spacing: 1px;
+    justify-content: center;
+    align-items: center;
+}
+section .content-box .form-box .input-box {
+    margin-bottom: 20px;
+}
+section .content-box .form-box .input-box span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #0a3c38;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+section .content-box .form-box .input-box input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #0a3c38;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #2ec4b6;
+    background: transparent;
+    border-radius: 30px;
+}
+section .content-box .form-box .input-box input[type="submit"] {
+    background: #2ec4b6;
+    color: #166d67;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .content-box .form-box .input-box input[type="submit"]:hover {
+    background: #33e2d2;
+}
+
+section .content-box .form-box .remember {
+    margin-bottom: 10px;
+    color: #0a3c38;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+section .content-box .form-box .input-box p {
+    color: #0a3c38;
+}
+
+section .content-box .form-box .input-box p a {
+    color: #2ec4b6;
+}
+
+@media (max-width: 768px) {
+    section .img-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    section .content-box {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    section .content-box .form-box {
+        width: 100%;
+        padding: 40px;
+        margin: 50px;
+        background: #ffffffb5;
+    }
+}
+section .content-box .form-box .logo {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section .content-box .form-box .logo img {
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*PROFILE*/
+.sampul {
+    background: url(images/bg-profil.png) 50% 50% no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.profile-image-content {
+    object-fit: cover 50% 50% no-repeat;
+    width: 150px;
+    height: 150px;
+    /*	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+.profile-image-content-2 {
+    object-fit: cover 50% 50% no-repeat;
+    width: 200px;
+    height: 200px;
+    /*	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+.user-dropdown {
+    border-bottom: 5px;
+}
+.dropdown-item a {
+    text-decoration: none;
+    color: #000;
+}
+.nav-item-black a {
+    color: #000;
+}
+
+.card-img-top {
+    object-fit: cover 50% 50% no-repeat;
+    height: 150px;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+    .content-cari {
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 50px;
+    }
+}
+.right-detail-content .right-title hr {
+    margin-bottom: 22px;
+}
+
+.button-komen {
+    opacity: 0;
+}
+.text-komen:focus + .button-komen {
+    opacity: 1;
+}
+
 </style>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card-header border-0 d-flex justify-content-between" style="background-color: #EBC7E6; width: 100%;">
-      <h4 class="d-inline">
-        Laporan
-      </h4>
-      </div>
-          <table class="table" style="background-color: #ECF2FF;">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Username</th>
-                <th scope="col">Password</th>
-                <th scope="col">Aksi</th>
+<?php
+include "../db/koneksi.php";
+if (isset($_SESSION['login'])) {
+	header("Location: index.php");
+}
+if (isset($_POST['login'])) {
+	$username = $_POST['username'];
+	$pass  = $_POST['pass'];
+	$query = $conn->query("SELECT * FROM tb_admin WHERE username='$username'");
+	$r = mysqli_num_rows($query);
+	if ($r > 0) {
+		while ($row = mysqli_fetch_array($query)) {
+			$user_id = $row['id'];
+			$username = $row['username'];
+			$user_pass = $row['password'];
+		}
+		if ($username == $username && $pass == $user_pass) {
+			$_SESSION['login'] = true;
+			$_SESSION['id'] = $user_id;
+			header("location:index.php");
+		} else {
+			echo ("<SCRIPT LANGUAGE='JavaScript'>
+          window.alert('pasword salah')
+      window.location.href='login.php';
+    </SCRIPT>");
+		}
+	} 
+}
+?>
+<!DOCTYPE html>
+<html>
 
-            </thead>
-            <?php $data = $conn->query("SELECT * FROM tb_user"); ?>
-              <?php $no = 1; ?>
-              <?php while ($row = $data->fetch_assoc()) : ?>
-                <tr>
-                  <td><?php echo $no++ ?></td>
-                  <td><?php echo $row["username"] ?></td>
-                  <td><?php echo $row["password"] ?></td>
-                 <td>
-                  <a href="index.php?id=<?php echo $row['id']?>&halaman=delete_report" class="text-danger">
-                    <i class="bi bi-trash-fill"></i>
-                  </a>
-                </td>
-                </tr>
-                <?php endwhile ?>
-          </table>
-      </div>
-        
-    </div>
-</div>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
- </fieldset> 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script type="text/javascript">
-  function printDiv (el) {
-    var a= document.body.innerHTML;
-    var b= document.getElementById(el).innerHTML;
+<body>
+	<section>
+		<div class="img-box">
+			<img src="../images/read-ebook.jpg">
+		</div>
+		<div class="content-box">
+			<div class="form-box">
+				<div class="logo">
+					<center>
+						<img src="../images/ine-logo.png"><br>
+						<h2>Masuk</h2>
+					</center>
+				</div>
+				<form action="" method="post">
+					<div class="input-box">
+						<span>Username</span>
+						<input type="text" name="username">
+					</div>
 
-    document.body.innerHTML=b;
-    window.print();
-    dokument.body.innerHTML=a;
-  }
-</script>
-   
+					<div class="input-box">
+						<span>Kata sandi</span>
+						<input type="password" name="pass">
+					</div>
 
+					<div class="remember">
+						<label><input type="checkbox" name="">Ingatkan saya</label>
+					</div>
 
+					<div class="input-box">
+						<input type="submit" value="Masuk" name="login">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

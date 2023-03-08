@@ -64,7 +64,7 @@
                         </div>
                         <div class="report">
                         <!-- CEK POSTINGAN KITA ATU BUKAN -->
-                        <?php if ($detail['user_id'] != $_SESSION['id']) : ?>
+                        <?php if ($detail['user_id'] != $_SESSION['email']) : ?>
                             <a href="add_report.php?id=<?php echo $detail['id'] ?>"><button class="btn alert-danger">Laporkan</button></a>
                         <?php endif ?>
                         <!-- CEK POSTINGAN KITA ATU BUKAN -->
@@ -77,7 +77,7 @@
                     <form action="" method="post">
                         <div class="row">
                             <div class="col-md-2">
-                                <?php $user_query = $conn->query("SELECT * FROM tb_user where id='$_SESSION[id]'"); ?>
+                                <?php $user_query = $conn->query("SELECT * FROM tb_user where email='$_SESSION[email]'"); ?>
                                 <?php $user_data =  $user_query->fetch_assoc() ?>
                                 <?php echo $user_data["username"] ?>
 
@@ -114,7 +114,7 @@
                 <?php while ($showcomment =  $komen->fetch_array()) {
                     echo $showcomment['username'] . "<br>";
                     echo $showcomment['comment'] . "<br>";
-                    if ($showcomment['user_id'] == $_SESSION['id']) {
+                    if ($showcomment['user_id'] == $_SESSION['email']) {
                         echo "<a href=''>Hapus Komentar</a>";
                     }
                     echo "<hr>";

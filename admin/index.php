@@ -1,6 +1,21 @@
 <?php
 include "header.php";
 include "../db/koneksi.php";
+
+session_start();
+
+if ($_SESSION ['level'] ="") {
+  header("location: . ./index.php");
+  # code...
+}
+
+if ($_SESSION ['level'] =="admin") {
+  header("location: ../admin/index.php");
+  # code...
+}
+
+echo $_SESSION['level'];
+
 ?>
 
 <input type="checkbox" id="nav-toggle" />
@@ -58,12 +73,15 @@ include "../db/koneksi.php";
             case 'delete_report':
                 include "delete_report.php";
                 break;
+            case 'add_admin':
+                include "add_admin.php";
+                break;
             case 'admin':
-                include "login.php";
+                include "admin.php";
                 break;
         }
     }else{
-        include "report.php";
+        include "kategori.php";
     }
     ?>
 </div>
