@@ -23,6 +23,9 @@ if (isset($_POST['add'])) {
     <input type="text" class="form-control" id="inputEmail4" name="username" required>
   </div>
 
+
+
+  
   <div class="col-12">
     <label for="inputAddress" class="form-label">Password</label>
     <input type="text" class="form-control" id="inputAddress" name="password" required>
