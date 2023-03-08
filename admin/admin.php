@@ -41,7 +41,7 @@
                   <td><?php echo $row["username"] ?></td>
                   <td><?php echo $row["password"] ?></td>
                  <td>
-                  <a href="index.php?id=<?php echo $row['id']?>&halaman=delete_report" class="text-danger">
+                  <a href="index.php?id=<?php echo $row['id']?>&halaman=delete_admin" class="text-danger">
                     <i class="bi bi-trash-fill"></i>
                   </a>
                 </td>

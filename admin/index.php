@@ -76,6 +76,9 @@ echo $_SESSION['level'];
             case 'add_admin':
                 include "add_admin.php";
                 break;
+            case 'delete_admin':
+                include "delete_admin.php";
+                break;
             case 'admin':
                 include "admin.php";
                 break;
