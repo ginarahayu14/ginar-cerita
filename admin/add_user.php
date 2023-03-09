@@ -2,13 +2,13 @@
 include "../db/koneksi.php";
 include "header.php";
 if (isset($_POST['add'])) {
-    $input = $_POST['username'];
+    $input = $_POST['email'];
     $information = $_POST['password'];
 
-    $add = "INSERT INTO tb_admin ( username, password)
+    $add = "INSERT INTO tb_user ( email, password)
     VALUES ('$input','$information')";
     if ($conn->query($add) === TRUE) {
-   header("location: index.php?halaman=admin");
+   header("location: index.php?halaman=user");
    ob_end_flush();
   }
 }
@@ -19,8 +19,8 @@ if (isset($_POST['add'])) {
 
  <div class="col-6">
  <div class="col-12">
-    <label for="inputEmail4" class="form-label mt-5">Username</label>
-    <input type="text" class="form-control" id="inputEmail4" name="username" required>
+    <label for="inputEmail4" class="form-label mt-5">Email</label>
+    <input type="text" class="form-control" id="inputEmail4" name="email" required>
   </div>
 
 

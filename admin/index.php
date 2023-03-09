@@ -4,17 +4,17 @@ include "../db/koneksi.php";
 
 session_start();
 
-if ($_SESSION ['level'] ="") {
-  header("location: . ./index.php");
-  # code...
+if ($_SESSION['level'] = "") {
+    header("location: login.php");
+    # code...
 }
 
-if ($_SESSION ['level'] =="admin") {
-  header("location: ../admin/index.php");
-  # code...
+if ($_SESSION['level'] == "admin") {
+    header("location: login.php");
+    # code...
 }
 
-echo $_SESSION['level'];
+echo $_SESSION['role'];
 
 ?>
 
@@ -30,11 +30,11 @@ echo $_SESSION['level'];
         <li class="item">
             <a href="index.php?halaman=kategori" class="menu-btn text-dark"><i class="fa-solid fa-list"></i><span>Kategori</span> </a>
         </li>
-         <li class="item">
-            <a href="index.php?halaman=admin" class="menu-btn text-dark"><i class="fa-solid fa-users"></i><span>Users</span> </a>
+        <li class="item">
+            <a href="index.php?halaman=user" class="menu-btn text-dark"><i class="fa-solid fa-users"></i><span>Users</span> </a>
         </li>
         <li class="item">
-            <a href="../logout.php" class="menu-btn text-dark"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span> </a>
+            <a href="logout.php" class="menu-btn text-dark"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span> </a>
         </li>
     </div>
 </div>
@@ -73,17 +73,17 @@ echo $_SESSION['level'];
             case 'delete_report':
                 include "delete_report.php";
                 break;
-            case 'add_admin':
-                include "add_admin.php";
+            case 'add_user':
+                include "add_user.php";
                 break;
-            case 'delete_admin':
-                include "delete_admin.php";
+            case 'delete_user':
+                include "delete_user.php";
                 break;
-            case 'admin':
-                include "admin.php";
+            case 'user':
+                include "user.php";
                 break;
         }
-    }else{
+    } else {
         include "kategori.php";
     }
     ?>

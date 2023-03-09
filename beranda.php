@@ -2,14 +2,14 @@
 include "db/koneksi.php";
 session_start();
 
-if ($_SESSION ['level'] ="") {
-  header("location: . ./index.php");
-  # code...
+if ($_SESSION['level'] = "") {
+    header("location: . ./index.php");
+    # code...
 }
 
-if ($_SESSION ['level'] =="user") {
-  header("location: beranda.php");
-  # code...
+if ($_SESSION['level'] == "user") {
+    header("location: beranda.php");
+    # code...
 }
 
 echo $_SESSION['level'];

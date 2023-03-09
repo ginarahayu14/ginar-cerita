@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Mar 2023 pada 06.51
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Waktu pembuatan: 09 Mar 2023 pada 05.26
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `perpustakaan` (
   `id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `perpustakaan`
@@ -39,15 +39,7 @@ CREATE TABLE `perpustakaan` (
 
 INSERT INTO `perpustakaan` (`id`, `post_id`, `user_id`) VALUES
 (11, 13, 0),
-(12, 12, 0),
-(13, 12, 3),
 (14, 15, 3),
-(15, 12, 0),
-(16, 12, 0),
-(17, 12, 0),
-(18, 12, 0),
-(19, 12, 0),
-(20, 12, 0),
 (21, 0, 0),
 (22, 0, 0),
 (23, 0, 0),
@@ -107,12 +99,7 @@ INSERT INTO `perpustakaan` (`id`, `post_id`, `user_id`) VALUES
 (77, 0, 0),
 (78, 0, 0),
 (79, 0, 0),
-(80, 9, 0),
-(81, 12, 0),
-(82, 9, 0),
-(83, 9, 0),
-(84, 14, 0),
-(85, 12, 0);
+(84, 14, 0);
 
 -- --------------------------------------------------------
 
@@ -122,16 +109,16 @@ INSERT INTO `perpustakaan` (`id`, `post_id`, `user_id`) VALUES
 
 CREATE TABLE `tb_admin` (
   `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_admin`
 --
 
-INSERT INTO `tb_admin` (`id`, `username`, `password`) VALUES
-(2, 'admin', 'cccc');
+INSERT INTO `tb_admin` (`id`, `email`, `password`) VALUES
+(4, 'admin@gmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -144,7 +131,7 @@ CREATE TABLE `tb_comment` (
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `comment` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_comment`
@@ -157,7 +144,10 @@ INSERT INTO `tb_comment` (`id`, `post_id`, `user_id`, `comment`) VALUES
 (4, 18, 5, 'rgth'),
 (5, 20, 5, 'dhsdjhjhjh'),
 (6, 20, 5, 'sdwdf'),
-(7, 12, 5, 'weqe');
+(7, 12, 5, 'weqe'),
+(8, 25, 5, 'bdf'),
+(9, 25, 5, 'yuki'),
+(10, 16, 5, 'dfewdf');
 
 -- --------------------------------------------------------
 
@@ -168,7 +158,7 @@ INSERT INTO `tb_comment` (`id`, `post_id`, `user_id`, `comment`) VALUES
 CREATE TABLE `tb_kategori` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_kategori`
@@ -195,20 +185,18 @@ CREATE TABLE `tb_post` (
   `view` int(11) NOT NULL,
   `status` enum('arsip','publis','disable') NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_post`
 --
 
 INSERT INTO `tb_post` (`id`, `judul`, `kategori_id`, `photo`, `isi`, `view`, `status`, `user_id`) VALUES
-(9, 'aaa', 0, '157158405-288-k56663.jpg', 'aaaaaa bbbb cccccc ddddd', 61, 'publis', 0),
-(12, 'aaa', 5, '', 'uoyuiyu                                             ', 12, 'publis', 0),
-(14, 'aaa', 0, '118595048-288-k474404.jpg', 'fsfsdfdsf', 30, 'publis', 3),
+(14, 'aaa', 0, '118595048-288-k474404.jpg', 'fsfsdfdsf', 32, 'publis', 3),
 (15, 'aaa', 0, '190494164-288-k461028.jpg', 'fsefsfsdfd', 43, 'publis', 3),
-(16, 'Fatimah', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 5, 'publis', 4),
+(16, 'Fatimah', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 9, 'publis', 4),
 (17, 'rtrt', 2, '200517743-288-k542360.jpg', 'etert', 6, 'publis', 4),
-(18, 'aaaaaaaa', 4, '12.jpg', 'eterere', 117, 'publis', 4),
+(18, 'aaaaaaaa', 4, '12.jpg', 'eterere', 119, 'publis', 4),
 (20, 'bb', 5, '185125230-288-k777566.jpg', 'fdgh', 18, 'publis', 4),
 (22, 'wwwfxx', 5, 'Q3LVs9ka-piala12_copy.png', '                                                sssss', 0, 'publis', 5),
 (23, 'aaaaaaaa', 4, 'Desert.jpg', 'sdds', 0, 'publis', 0);
@@ -225,7 +213,7 @@ CREATE TABLE `tb_report` (
   `user_id` int(11) NOT NULL,
   `sebab` text NOT NULL,
   `Alasan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_report`
@@ -234,7 +222,12 @@ CREATE TABLE `tb_report` (
 INSERT INTO `tb_report` (`id`, `post_id`, `user_id`, `sebab`, `Alasan`) VALUES
 (11, 12, 5, 'Kekerasan', 'kkkk'),
 (12, 12, 5, 'Kebencian atau Perundungan', 'llllllll'),
-(13, 20, 0, 'Kebencian atau Perundungan', 'wdeqw');
+(14, 25, 0, 'inappropraite content', 'ewer'),
+(15, 14, 0, 'inappropraite content', 'asas'),
+(16, 9, 0, 'inappropraite content', 'ss'),
+(17, 9, 0, 'inappropraite content', 'ssdasd'),
+(18, 25, 0, 'inappropraite content', 'uiiii'),
+(19, 16, 0, 'Kebencian atau Perundungan', 'wdw');
 
 -- --------------------------------------------------------
 
@@ -250,14 +243,13 @@ CREATE TABLE `tb_user` (
   `password` varchar(100) NOT NULL,
   `photo` text NOT NULL,
   `role` enum('admin','user') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `nama`, `username`, `email`, `password`, `photo`, `role`) VALUES
-(4, '', 'kmnnasir', 'nasirukun@gmail.com', 'a', '', 'admin'),
 (5, '', 'anisaa', 'ginar8480@gmail.com ', '1', '', 'user'),
 (6, '', 'gina', 'ginarahayu@gmail.com', '2', '', 'user');
 
@@ -321,19 +313,19 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `perpustakaan`
 --
 ALTER TABLE `perpustakaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_admin`
 --
 ALTER TABLE `tb_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_comment`
 --
 ALTER TABLE `tb_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori`
@@ -345,19 +337,19 @@ ALTER TABLE `tb_kategori`
 -- AUTO_INCREMENT untuk tabel `tb_post`
 --
 ALTER TABLE `tb_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_report`
 --
 ALTER TABLE `tb_report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
