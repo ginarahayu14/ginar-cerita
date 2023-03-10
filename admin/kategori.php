@@ -1,4 +1,4 @@
-<div class="row mt-4 p-4">
+<div class="row mt-2 p-4">
     <div class="col-md-8 mt-4">
         <div class="card border-0 card-h-100">
             <div class="card-header border-0 d-flex justify-content-between" style="background-color: #A0616A; width: 130%;">

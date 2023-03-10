@@ -8,7 +8,7 @@ include '../db/koneksi.php';
   }
 
   .container {
-    margin-top: 4%;
+    margin-top: 2%;
   }
 
   .btn {

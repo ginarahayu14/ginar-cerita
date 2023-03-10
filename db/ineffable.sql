@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 05:02 AM
+-- Generation Time: Mar 10, 2023 at 11:01 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -99,7 +99,8 @@ INSERT INTO `perpustakaan` (`id`, `post_id`, `user_id`) VALUES
 (77, 0, 0),
 (78, 0, 0),
 (79, 0, 0),
-(84, 14, 0);
+(84, 14, 0),
+(87, 15, 0);
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,8 @@ INSERT INTO `tb_comment` (`id`, `post_id`, `user_id`, `comment`) VALUES
 (8, 25, 5, 'bdf'),
 (9, 25, 5, 'yuki'),
 (10, 16, 5, 'dfewdf'),
-(11, 26, 5, 'fdsf');
+(11, 26, 5, 'fdsf'),
+(12, 16, 23, 'hoho');
 
 -- --------------------------------------------------------
 
@@ -195,13 +197,14 @@ CREATE TABLE `tb_post` (
 INSERT INTO `tb_post` (`id`, `judul`, `kategori_id`, `photo`, `isi`, `view`, `status`, `user_id`) VALUES
 (14, 'aaa', 0, '118595048-288-k474404.jpg', 'fsfsdfdsf', 32, 'publis', 3),
 (15, 'aaa', 0, '190494164-288-k461028.jpg', 'fsefsfsdfd', 43, 'publis', 3),
-(16, 'Fatimah', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 9, 'publis', 4),
+(16, 'Fatimah', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 21, 'publis', 4),
 (17, 'rtrt', 2, '200517743-288-k542360.jpg', 'etert', 6, 'publis', 4),
 (18, 'aaaaaaaa', 4, '12.jpg', 'eterere', 119, 'publis', 4),
 (20, 'bb', 5, '185125230-288-k777566.jpg', 'fdgh', 18, 'publis', 4),
 (22, 'wwwfxx', 5, 'Q3LVs9ka-piala12_copy.png', '                                                sssss', 0, 'publis', 5),
-(23, 'aaaaaaaa', 4, 'Desert.jpg', 'sdds', 0, 'publis', 0),
-(26, 'matamu', 7, 'cer.webp', 'ererfew', 4, 'publis', 0);
+(26, 'matamu', 7, 'cer.webp', 'ererfew', 4, 'publis', 0),
+(27, 'Kembang Sepasang', 8, 'pui.jpg', 'gfkewgf', 0, 'publis', 0),
+(29, 'matamu', 8, 'Screenshot (4).png', 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq                                        ', 0, 'publis', 0);
 
 -- --------------------------------------------------------
 
@@ -217,20 +220,6 @@ CREATE TABLE `tb_report` (
   `Alasan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tb_report`
---
-
-INSERT INTO `tb_report` (`id`, `post_id`, `user_id`, `sebab`, `Alasan`) VALUES
-(11, 12, 5, 'Kekerasan', 'kkkk'),
-(12, 12, 5, 'Kebencian atau Perundungan', 'llllllll'),
-(14, 25, 0, 'inappropraite content', 'ewer'),
-(15, 14, 0, 'inappropraite content', 'asas'),
-(16, 9, 0, 'inappropraite content', 'ss'),
-(17, 9, 0, 'inappropraite content', 'ssdasd'),
-(18, 25, 0, 'inappropraite content', 'uiiii'),
-(19, 16, 0, 'Kebencian atau Perundungan', 'wdw');
-
 -- --------------------------------------------------------
 
 --
@@ -245,6 +234,15 @@ CREATE TABLE `tb_user` (
   `password` varchar(100) NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+INSERT INTO `tb_user` (`id`, `nama`, `username`, `email`, `password`, `photo`) VALUES
+(19, 'gina', 'gina', 'ginar@gmail.com', 'g', ''),
+(21, '', 'user', 'ginar8480@gmail.com', 'f', ''),
+(22, '', 'gina rahayu', 'ginarahayu@gmail.com', 'b', '');
 
 --
 -- Indexes for dumped tables
@@ -306,7 +304,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `perpustakaan`
 --
 ALTER TABLE `perpustakaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `tb_admin`
@@ -318,7 +316,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_comment`
 --
 ALTER TABLE `tb_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
@@ -330,19 +328,19 @@ ALTER TABLE `tb_kategori`
 -- AUTO_INCREMENT for table `tb_post`
 --
 ALTER TABLE `tb_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tb_report`
 --
 ALTER TABLE `tb_report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

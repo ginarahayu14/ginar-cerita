@@ -4,15 +4,11 @@ include "../db/koneksi.php";
 
 session_start();
 
-if ($_SESSION['level'] = "") {
+if (empty($_SESSION['admin']['id'])) {
     header("location: login.php");
-    # code...
 }
 
-if ($_SESSION['role'] == "admin") {
-    header("location: login.php");
-    # code...
-}
+
 
 
 ?>

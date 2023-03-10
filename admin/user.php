@@ -8,7 +8,7 @@ include '../db/koneksi.php';
   }
 
   .container {
-    margin-top: 8%;
+    margin-top: 4%;
   }
 
   .btn {
@@ -22,9 +22,8 @@ include '../db/koneksi.php';
       <div class="card-header border-0 d-flex justify-content-between" style="background-color: #A0616A; width: 100%;">
 
         <h4 class="d-inline">
-          Laporan
+          Account
         </h4>
-        <a class="btn btn-primaryokli" href="index.php?halaman=add_user">Tambah</a>
       </div>
       <table class="table" style="background-color: #ECF2FF;">
         <thead>
