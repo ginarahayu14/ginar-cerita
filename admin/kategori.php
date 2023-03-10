@@ -1,12 +1,12 @@
 <div class="row mt-4 p-4">
     <div class="col-md-8 mt-4">
         <div class="card border-0 card-h-100">
-            <div class="card-header border-0 d-flex justify-content-between" style="background-color: #EBC7E6; width: 130%;">
+            <div class="card-header border-0 d-flex justify-content-between" style="background-color: #A0616A; width: 130%;">
                 <h4 class="d-inline">
                     Daftar Kategori
                 </h4>
                 <div class="">
-                    <a href="index.php?halaman=kategori_add"><button class="btn btn-primary btn-sm"><i class="bi bi-plus"></i>Kategori</button></a>
+                    <a href="index.php?halaman=kategori_add"><button class="btn btn-sm" style="background-color: #ECF2FF;"><i class="bi bi-plus"></i>Kategori</button></a>
                 </div>
             </div>
             <!-- Table -->

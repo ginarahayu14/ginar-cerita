@@ -5,7 +5,7 @@
 
   if ($data) {
     echo ("<script LANGUAGE='JavaScript'>
-    window.location.href='index.php?halaman=delete_user';
+    window.location.href='index.php?halaman=user';
     </script>");
   }
 ?>

@@ -8,11 +8,11 @@ include '../db/koneksi.php';
   }
 
   .container {
-    margin-top: 8%;
+    margin-top: 4%;
   }
 
   .btn {
-    background-color: #EBC7E6;
+    background-color: #A0616A;
     margin-bottom: 1%;
   }
 </style>
@@ -20,7 +20,7 @@ include '../db/koneksi.php';
   <div class="row">
     <div class="col-sm-8">
       <button class="btn mx-2" onclick="printDiv('print')" type="submit" data-toggle="print" data-placement="right" title="print"><i class='bx bx-printer'></i>Print</button>
-      <div class="card-header border-0 d-flex justify-content-between" style="background-color: #EBC7E6; width: 100%;">
+      <div class="card-header border-0 d-flex justify-content-between" style="background-color: #A0616A; width: 100%;">
         <h4 class="d-inline">
           Laporan
         </h4>
@@ -38,21 +38,17 @@ include '../db/koneksi.php';
 
             </tr>
           </thead>
-          <?php $data = $conn->query("SELECT tb_report.id, tb_report.sebab, tb_report.Alasan, tb_report.post_id, tb_report.user_id, tb_post.judul, tb_user.username FROM  tb_report
-                    INNER JOIN tb_post
-                    on tb_report.post_id = tb_post.id
-                    INNER JOIN tb_user
-                    on tb_report.user_id = tb_user.id"); ?>
+          <?php $data = $conn->query("SELECT * FROM tb_report"); ?>
           <?php $no = 1; ?>
           <?php while ($row = $data->fetch_assoc()) : ?>
             <tr>
               <td><?php echo $no++ ?></td>
-              <td><?php echo $row["judul"] ?></td>
-              <td><?php echo $row["username"] ?></td>
+              <td><?php echo $row["post_id"] ?></td>
+              <td><?php echo $row["user_id"] ?></td>
               <td><?php echo $row["sebab"] ?></td>
               <td><?php echo $row["Alasan"] ?></td>
               <td>
-                <a href="index.php?id=<?php echo $row['id'] ?>&halaman=delete_report" class="text-danger">
+                <a href="index.php?id=<?php echo $row['id'] ?>&halaman=delete_report" class="text-danger" onclick="return confirm('berhasil dihapus')">
                   <i class="bi bi-trash-fill"></i>
                 </a>
               </td>
@@ -83,7 +79,8 @@ include '../db/koneksi.php';
             </div>
           </div>
         </div>
-      <?php } ?>
+      <?php 
+      } ?>
     </div>
   </div>
 </div>

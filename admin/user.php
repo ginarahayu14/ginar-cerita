@@ -12,14 +12,14 @@ include '../db/koneksi.php';
   }
 
   .btn {
-    background-color: #EBC7E6;
+    background-color: #ECF2FF;
     margin-bottom: 1%;
   }
 </style>
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <div class="card-header border-0 d-flex justify-content-between" style="background-color: #EBC7E6; width: 100%;">
+      <div class="card-header border-0 d-flex justify-content-between" style="background-color: #A0616A; width: 100%;">
 
         <h4 class="d-inline">
           Laporan
@@ -31,8 +31,6 @@ include '../db/koneksi.php';
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Username</th>
-            <th scope="col">Password</th>
-            <th scope="col">Role</th>
             <th scope="col">Aksi</th>
 
         </thead>
@@ -42,8 +40,6 @@ include '../db/koneksi.php';
           <tr>
             <td><?php echo $no++ ?></td>
             <td><?php echo $row["email"] ?></td>
-            <td><?php echo $row["password"] ?></td>
-            <td><?php echo $row["role"] ?></td>
             <td>
               <a href="index.php?id=<?php echo $row['id'] ?>&halaman=delete_user" onclick="return confirm ('Yakin dihapus ?')" class="text-danger">
                 <i class="bi bi-trash-fill"></i>

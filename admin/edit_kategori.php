@@ -3,7 +3,7 @@
 ?>
 <style>
   .row {
-    background-color: #EBC7E6;
+    background-color: #A0616A;
     width: 60%;
     padding: 8%;
     margin-top: 5%;
@@ -46,7 +46,7 @@
         <input type="text" class="form-control" id="" placeholder="nama" name="nama" value="<?php echo "$nama";?>">
       </div>
       <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3" name="update" VALUES="update">Update</button>
+        <button type="submit" class="btn mb-3" name="update" VALUES="update" style="background-color: #ECF2FF;">Update</button>
       </div>
     </form>
   </center>

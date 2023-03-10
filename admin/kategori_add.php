@@ -3,7 +3,7 @@
 ?>
 <style>
   .row {
-    background-color: #EBC7E6;
+    background-color: #A0616A;
     width: 60%;
     padding: 8%;
     margin-top: 5%;
@@ -44,7 +44,7 @@
         <input type="text" class="form-control" id="" placeholder="nama kategori" name="nama">
       </div>
       <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3" name="add" value="tambah">Tambah</button>
+        <button type="submit" class="btn mb-3" name="add" value="tambah"style="background-color: #ECF2FF;">Tambah</button>
       </div>
     </form>
   </center>

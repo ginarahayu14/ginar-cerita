@@ -9,12 +9,11 @@ if ($_SESSION['level'] = "") {
     # code...
 }
 
-if ($_SESSION['level'] == "admin") {
+if ($_SESSION['role'] == "admin") {
     header("location: login.php");
     # code...
 }
 
-echo $_SESSION['role'];
 
 ?>
 

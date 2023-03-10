@@ -32,7 +32,7 @@ if (isset($_POST['add'])) {
   </div>
  </div>
   <div class="">
-<input type="submit" class="btn btn-success d-inline" value="Tambah" name="add">
+<input type="submit" class="btn d-inline" onclick="return confirm('berhasil di tambah')" value="Tambah" name="add" style="background-color:#A0616A;">
 </div>
 </form>
 </div>
