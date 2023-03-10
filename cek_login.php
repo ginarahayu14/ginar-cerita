@@ -19,16 +19,15 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while ($row = $result->fetch_assoc()) {
-    if ($row['role'] == "admin") {
-      $_SESSION['email'] = $email;
-      $_SESSION['level'] = "admin";
-      header("location:admin/index.php");
-    } elseif ($row['role'] == "user") {
-      $_SESSION['email'] = $email;
-      $_SESSION['level'] = "user";
-      header("location: beranda.php");
-    }
+        $_SESSION["user"] = [
+            "id" => $row["id"],
+            "email" => $row["email"]    
+        ];
+        $_SESSION['email'] = $email;
+        $_SESSION['level'] = "user";
+        header("location: beranda.php");
   }
+  
 } else {
   header("location:index.php?pesan=gagal");
 }
