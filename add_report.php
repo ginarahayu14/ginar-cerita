@@ -23,11 +23,18 @@
     .from{
         margin-left: 15%;
     }
+    .btnn{
+        margin-left: 25%;
+    }
+    .btn{
+        background-color: #A0616A;
+    }
 </style>
 
-
-
-<div class="container mt-5 pt-5 pb-5">
+<div class="btnn mt-1">
+<font size="5" font="center"><a class="btn " href="beranda.php" style="color: black; text-decoration: none;"><b class="ml-2">Beranda</b> </a></font>
+</div>
+<div class="container mt-2 pt-5 pb-5">
     <form method="POST" class="from">
         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-white" style="width: 80%; text-align: center;">
             <b class="">Laporkan Cerita</b>
@@ -37,7 +44,7 @@
             <label for="" class="form-label text-white">Judul</label>
             <input type="text" class="form-control" id="" aria-describedby="" name="judul" value="<?php echo $hasil['judul'] ?>">
             <input type="hidden" class="form-control" id="" aria-describedby="" name="post_id" value="<?php echo $hasil['id'] ?>">
-            <input type="text" class="form-control" id="" aria-describedby="" name="user_id" value="<?php echo $_SESSION['user']['id'] ?>">
+            <input type="hidden" class="form-control" id="" aria-describedby="" name="user_id" value="<?php echo $_SESSION['user']['id'] ?>">
         </div>
         <div class="mb-3 text-white">
             <label for=""><b>Sebab</b></label>

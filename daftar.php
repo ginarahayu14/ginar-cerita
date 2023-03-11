@@ -10,7 +10,7 @@ if (isset($_POST["daftar"])) {
 	$email    = $_POST['email'];
 	$password = $_POST['password'];
 
-	$daftar   = $conn->query("INSERT INTO tb_user VALUES ('', '', '$username', '$email', '$password','' )");
+	$daftar   = $conn->query("INSERT INTO tb_user VALUES ('', '', '$username', '$email', md5('$password'),'' )");
 	if ($daftar) {
 		echo ("<SCRIPT LANGUAGE='JavaScript'>
 				window.alert('Pendaftaran Berhasil, Klik OK untuk Login')

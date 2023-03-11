@@ -68,9 +68,6 @@ if (empty($_SESSION['admin']['id'])) {
             case 'delete_report':
                 include "delete_report.php";
                 break;
-            case 'add_user':
-                include "add_user.php";
-                break;
             case 'delete_user':
                 include "delete_user.php";
                 break;

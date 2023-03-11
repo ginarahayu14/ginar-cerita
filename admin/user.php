@@ -8,7 +8,7 @@ include '../db/koneksi.php';
   }
 
   .container {
-    margin-top: 4%;
+    margin-top: 6%;
   }
 
   .btn {
@@ -30,15 +30,17 @@ include '../db/koneksi.php';
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Username</th>
+            <th scope="col">Email</th>
             <th scope="col">Aksi</th>
-
         </thead>
         <?php $data = $conn->query("SELECT * FROM tb_user"); ?>
         <?php $no = 1; ?>
         <?php while ($row = $data->fetch_assoc()) : ?>
           <tr>
             <td><?php echo $no++ ?></td>
+            <td><?php echo $row["username"] ?></td>
             <td><?php echo $row["email"] ?></td>
+
             <td>
               <a href="index.php?id=<?php echo $row['id'] ?>&halaman=delete_user" onclick="return confirm ('Yakin dihapus ?')" class="text-danger">
                 <i class="bi bi-trash-fill"></i>

@@ -40,11 +40,11 @@
               <label for="exampleFormControlInput1" class="form-label">Kategori</label>
               <select class="form-control" id="exampleFormControlSelect1" name="kategori">
               <?php 
-                  $query = $conn->query("SELECT * FROM tb_kategori order by nama_kategori asc");
+                  $query = $conn->query("SELECT * FROM tb_kategori order by nama asc");
                   while ($data=mysqli_fetch_array($query)) {
                 ?>
              
-                <option value="<?php echo $data['id']?>"><?php echo $data['nama_kategori']?></option>
+                <option value="<?php echo $data['id']?>"><?php echo $data['nama']?></option>
                 
                 <?php
                   }

@@ -112,15 +112,16 @@
                 $komen =  $conn->query("SELECT tb_comment.id, tb_comment.user_id, tb_comment.comment, tb_user.username FROM tb_comment INNER JOIN tb_user ON tb_comment.user_id=tb_user.id WHERE tb_comment.post_id=" . $detail['id']);
                 ?>
                 <?php while ($showcomment =  $komen->fetch_array()) {
+                    $id_komentar = $showcomment['id'];
                     echo $showcomment['username'] . "<br>";
                     echo $showcomment['comment'] . "<br>";
-                    if ($showcomment['user_id'] == $_SESSION['email']) {
-                        echo "<a href=''>Hapus Komentar</a>";
+                    if ($showcomment['user_id'] == $_SESSION['user']["id"]) {
+                        echo "<a href='delete_komentar.php?id_komen=$id_komentar&id_post=$id'>Hapus Komentar</a>";
                     }
                     echo "<hr>";
                 }
                 ?>
-                <a href=""></a>
+               
                 <?php endwhile; ?>
             <!-- MENAMPILKAN KOMENTAR -->
         </div>

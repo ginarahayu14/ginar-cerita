@@ -13,7 +13,7 @@ $password = $_POST['password'];
 
 // menyeleksi data admin dengan username dan password yang sesuai
 
-$sql = "SELECT * FROM tb_user WHERE email='$email' and Password='$password'";
+$sql = "SELECT * FROM tb_user WHERE email='$email' and Password=md5('$password')";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
