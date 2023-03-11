@@ -17,19 +17,17 @@ $sql = "SELECT * FROM tb_user WHERE email='$email' and Password=md5('$password')
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  // output data of each row
-  while ($row = $result->fetch_assoc()) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
         $_SESSION["user"] = [
             "id" => $row["id"],
-            "email" => $row["email"]    
+            "email" => $row["email"]
         ];
-        $_SESSION['email'] = $email;
         $_SESSION['level'] = "user";
         header("location: beranda.php");
-  }
-  
+    }
 } else {
-  header("location:index.php?pesan=gagal");
+    header("location:index.php?pesan=gagal");
 }
 $conn->close();
 
