@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2023 at 08:51 AM
+-- Generation Time: Mar 13, 2023 at 05:03 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -140,8 +140,8 @@ CREATE TABLE `tb_comment` (
 --
 
 INSERT INTO `tb_comment` (`id`, `post_id`, `user_id`, `comment`) VALUES
-(26, 16, 32, 'aaaaa'),
-(28, 16, 32, 'fsdfsfwsfsdfsdfsdfsd');
+(28, 16, 32, 'fsdfsfwsfsdfsdfsdfsd'),
+(33, 36, 32, 'haii gina ');
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,7 @@ CREATE TABLE `tb_kategori` (
 --
 
 INSERT INTO `tb_kategori` (`id`, `nama`) VALUES
-(3, 'novel'),
+(3, 'Novel'),
 (4, 'Cerpen'),
 (7, 'Quotes'),
 (8, 'Puisi');
@@ -187,14 +187,13 @@ CREATE TABLE `tb_post` (
 
 INSERT INTO `tb_post` (`id`, `judul`, `kategori_id`, `photo`, `isi`, `view`, `status`, `user_id`) VALUES
 (14, 'Sma VS Smk', 0, '118595048-288-k474404.jpg', 'fsfsdfdsf', 51, 'publis', 3),
-(15, 'Cinta Putih Abu - Abu', 2, '190494164-288-k461028.jpg', 'fsefsfsdfd', 119, 'publis', 3),
-(16, 'Muara Aksara', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 80, 'publis', 4),
+(15, 'Cinta Putih Abu - Abu', 2, '190494164-288-k461028.jpg', 'Berseragam putih abu-abu terasa paling menyenangkan dari hal lainnya. Masa Remaja menuju masa dewasa. Banyak teman-teman baru, suasana yang baru dan cowok-cowok keren di sekolah. Awal memasuki masa ini, selalu dihantui ketakutan luar biasa membayangkan eksperesi wajah-wajah seram kakak kelas dan MOS (masa orientasi siswa) yang banyak aturan. Kaos kaki dengan warna yang berbeda putih sebelah kanan dan hitam untuk sebelah kiri, tas dari kardus, dan diselingi dengan permainan yang konyol bagi siswa baru dan lucu bagi kakak kelas yang sok atur. Sangat dan sangat menyebalkan. MOS telah selesai, siswa baru bisa bernapas lega akhirnya bisa lepas juga dari kakak kelas. Memulai segalanya dengan serba baru dari seragam, sepatu, tas, sampai buku. Hehehe?, menguras dompet yang tidak sedikit.\r\n\r\nNamaku Dinda. Aku adalah salah satu dari murid baru tersebut. Aku tidak menonjol seperti anak-anak lainnya. Pemalu, murah tersenyum itulah aku. Aku mempunyai banyak teman di sekolah baruku ini. Ada satu teman yang paling dekat denganku dan sudah kuanggap seperti saudara sendiri. Namanya Haflinda, tapi aku biasa memanggilnya Linda. Linda adalah sosok yang sangat menyenangkan buatku. Kami duduk sebangku. Dia adalah teman masa SMPku. Tiada hari tanpa tawa diantara kami. Segala yang menyedihkan kami jadikan hal yang lucu. Kami berdua sangat kompak. Orang akan bertanya bila melihat aku sendiri karena mereka sering bilang dimana ada Dinda disitu ada Linda. Tak dapat dipisahkan.\r\n\r\nSekolahku lumayan luas, mempunyai lapangan basket, futsal, dan volly. Teman-teman kelasku semuanya menyenangkan, mereka baik dan sayang padaku. Terlebih temanku Intan, dia sangat sayang pada aku dan Linda. Hidupku terasa lengkap punya sahabat dalam kelas ini. Kelas kami adalah Xa.', 130, 'publis', 3),
+(16, 'Muara Aksara', 3, 'antologi.png', 'ryrtyrtyrtytytytryesssssssssssssssssssssssssssssssss', 94, 'publis', 4),
 (17, 'Masa Smk', 2, '200517743-288-k542360.jpg', 'etert', 8, 'publis', 4),
-(18, 'Yasinta', 4, '12.jpg', 'eterere', 121, 'publis', 4),
+(18, 'Yasinta', 4, '12.jpg', 'eterere', 122, 'publis', 4),
 (20, 'bb', 5, '185125230-288-k777566.jpg', 'fdgh', 18, 'publis', 4),
-(22, 'wwwfxx', 5, 'Q3LVs9ka-piala12_copy.png', '                                                sssss', 0, 'publis', 5),
 (32, 'Bersama - Mu', 7, 'cer.webp', 'bbbbb', 0, 'publis', 32),
-(33, 'Kembang Sepasang', 8, 'pui.jpg', 'aaaaa', 0, 'publis', 32);
+(33, 'Kembang Sepasang', 8, 'pui.jpg', 'aaaaa', 5, 'publis', 32);
 
 -- --------------------------------------------------------
 
@@ -215,7 +214,7 @@ CREATE TABLE `tb_report` (
 --
 
 INSERT INTO `tb_report` (`id`, `post_id`, `user_id`, `sebab`, `Alasan`) VALUES
-(24, 16, 32, 'Menyakiti diri sendiri', 'f88');
+(27, 15, 32, 'Kebencian atau Perundungan', 'EGOIS');
 
 -- --------------------------------------------------------
 
@@ -237,7 +236,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id`, `nama`, `username`, `email`, `password`, `photo`) VALUES
-(32, '', 'ginarahayu', 'ginarahayu@gmail.com', 'b2f5ff47436671b6e533d8dc3614845d', '');
+(32, 'Gina Rahayu', 'ginarahayu', 'ginarahayu@gmail.com  ', 'b2f5ff47436671b6e533d8dc3614845d', ''),
+(33, '', 'a', 'nasirukun@gmail.com', '0cc175b9c0f1b6a831c399e269772661', '');
 
 --
 -- Indexes for dumped tables
@@ -311,7 +311,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_comment`
 --
 ALTER TABLE `tb_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
@@ -323,19 +323,19 @@ ALTER TABLE `tb_kategori`
 -- AUTO_INCREMENT for table `tb_post`
 --
 ALTER TABLE `tb_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tb_report`
 --
 ALTER TABLE `tb_report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
