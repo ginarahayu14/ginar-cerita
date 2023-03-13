@@ -166,7 +166,8 @@ echo $_SESSION['level'];
 
                     <li class="nav-item dropdown">
                         <?php
-                        $select_user = $conn->query("SELECT * FROM tb_user WHERE email = '$_SESSION[email]' ");
+                        $email = $_SESSION["user"]["email"];
+                        $select_user = $conn->query("SELECT * FROM tb_user WHERE email = '$email' ");
                         while ($u = mysqli_fetch_array($select_user)) {
                         ?>
                             <?php if (empty($u['photo'])) : ?>

@@ -30,7 +30,8 @@
     <div class="module-content">
         <?php
         // var_dump($_SESSION);
-        $sel = $conn->query("SELECT * FROM tb_user WHERE email='$_SESSION[email]'");
+        $email = $_SESSION["user"]["email"];
+        $sel = $conn->query("SELECT * FROM tb_user WHERE email='$email'");
         while ($nam = mysqli_fetch_array($sel)) {
         ?>
             <div class="greeting">

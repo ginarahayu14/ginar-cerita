@@ -22,8 +22,9 @@ if (isset($_POST['update_profile'])) {
 
 <div class="container">
   <div class="col-md-6 mx-auto">
+    <?php $email = $email = $_SESSION["user"]["email"];?>
     <?php
-    $update_user = mysqli_query($conn, "SELECT * FROM tb_user WHERE email='$_SESSION[email]'");
+    $update_user = mysqli_query($conn, "SELECT * FROM tb_user WHERE email='$email'");
     while ($u = mysqli_fetch_array($update_user)) {
     ?>
       <form class="col-md-8" method="post" enctype="multipart/form-data" action="">

@@ -35,7 +35,8 @@ while ($show = mysqli_fetch_array($show_user)) {
       </div>
 
       <div class="pb-md-5 d-flex justify-content-center">
-        <a href="beranda.php?beranda=edit_profile&user_email=<?php echo $_SESSION['email'] ?>">
+        <?php $email = $email = $_SESSION["user"]["email"];?>
+        <a href="beranda.php?beranda=edit_profile&user_email=<?php echo $email ?>">
           <button type="button" class="btn btn-primary">Edit Profile <i class="fas fa-edit"></i></button>
         </a>
       </div>

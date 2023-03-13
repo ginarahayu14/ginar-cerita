@@ -1,6 +1,7 @@
+<?php $email = $email = $_SESSION["user"]["email"];?>
 <?php
 include "db/koneksi.php";
-  $data = $conn->query("SELECT * FROM tb_post WHERE status = 'arsip' AND user_id='$_SESSION[email]'");
+  $data = $conn->query("SELECT * FROM tb_post WHERE status = 'arsip' AND user_id='$email'");
   while($d = mysqli_fetch_array($data)){
 ?>
 <div class="col-md-2">

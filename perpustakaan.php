@@ -1,6 +1,7 @@
 <?php
 include "db/koneksi.php";
-$data = $conn->query("SELECT * FROM perpustakaan join tb_post on perpustakaan.post_id = tb_post.id WHERE perpustakaan.user_id='$_SESSION[email]'");
+$email = $_SESSION["user"]["email"];
+$data = $conn->query("SELECT * FROM perpustakaan join tb_post on perpustakaan.post_id = tb_post.id WHERE perpustakaan.user_id='$email'");
 while ($d = mysqli_fetch_array($data)) {
 ?>
 	<div class="col-md-2">
